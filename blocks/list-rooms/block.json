@@ -1,0 +1,12 @@
+{
+  "name": "acf/list-rooms",
+  "title": "List of Rooms",
+  "description": "",
+  "category": "bungalowkitchen",
+  "keywords": ["list-rooms"],
+  "_viewScript": ["blocks/list-rooms"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

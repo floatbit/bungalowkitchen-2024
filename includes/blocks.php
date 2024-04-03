@@ -13,7 +13,7 @@ add_action('init', function () {
     register_block_type($dir . '/blocks/menus');
     register_block_type($dir . '/blocks/events');
     register_block_type($dir . '/blocks/events-past');
-    register_block_type($dir . '/blocks/list-galleries');
+    register_block_type($dir . '/blocks/list-rooms');
     register_block_type($dir . '/blocks/boat-hand');
     register_block_type($dir . '/blocks/tripleseat-form');
     register_block_type($dir . '/blocks/image-rows');
@@ -36,7 +36,7 @@ add_filter('allowed_block_types_all', function($allowed_blocks, $editor_context)
                 'acf/menus',
                 'acf/events',
                 'acf/events-past',
-                'acf/list-galleries',
+                'acf/list-rooms',
                 'acf/boat-hand',
                 'acf/tripleseat-form',
                 'acf/image-rows',
