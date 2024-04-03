@@ -16,8 +16,14 @@ add_action('after_setup_theme', function () {
     // Add ACF options page
     if (function_exists('acf_add_options_page')) {
         acf_add_options_page([
-            'page_title' => 'Global Options',
-            'menu_slug' => 'global-options',
+            'page_title' => 'Announcement',
+            'menu_slug' => 'announcement',
+        ]);
+    }
+    if (function_exists('acf_add_options_page')) {
+        acf_add_options_page([
+            'page_title' => 'Footer',
+            'menu_slug' => 'footer',
         ]);
     }
 });

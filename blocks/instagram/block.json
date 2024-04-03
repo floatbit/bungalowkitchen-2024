@@ -1,0 +1,12 @@
+{
+  "name": "acf/instagram",
+  "title": "Instagram",
+  "description": "",
+  "category": "bungalowkitchen",
+  "keywords": ["instagram"],
+  "_viewScript": ["blocks/instagram"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "acf/boat-hand",
+  "title": "Boat Hand",
+  "description": "",
+  "category": "bungalowkitchen",
+  "keywords": ["boat-hand"],
+  "_viewScript": ["blocks/boat-hand"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

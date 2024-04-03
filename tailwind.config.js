@@ -58,7 +58,7 @@ module.exports = {
       center: true,
     },
     fontFamily: {
-      sans: ['Inter', 'sans-serif'],
+      sans: ['Apercu', 'sans-serif'],
     },
     // extend: {
     //   colors: {

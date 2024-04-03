@@ -1,0 +1,12 @@
+{
+  "name": "acf/menus",
+  "title": "Menus",
+  "description": "",
+  "category": "bungalowkitchen",
+  "keywords": ["menus"],
+  "_viewScript": ["blocks/menus"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

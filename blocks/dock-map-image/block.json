@@ -1,0 +1,12 @@
+{
+  "name": "acf/dock-map-image",
+  "title": "Dock Map Image",
+  "description": "",
+  "category": "bungalowkitchen",
+  "keywords": ["dock-map-image"],
+  "_viewScript": ["blocks/dock-map-image"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

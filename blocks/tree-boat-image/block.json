@@ -1,0 +1,12 @@
+{
+  "name": "acf/tree-boat-image",
+  "title": "Tree Boat Image",
+  "description": "",
+  "category": "bungalowkitchen",
+  "keywords": ["tree-boat-image"],
+  "_viewScript": ["blocks/tree-boat-image"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

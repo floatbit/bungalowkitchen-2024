@@ -1,0 +1,12 @@
+{
+  "name": "acf/tripleseat-form",
+  "title": "Tripleseat Form",
+  "description": "",
+  "category": "bungalowkitchen",
+  "keywords": ["tripleseat-form"],
+  "_viewScript": ["blocks/tripleseat-form"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

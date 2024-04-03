@@ -1,0 +1,12 @@
+{
+  "name": "acf/list-galleries",
+  "title": "List of Galleries",
+  "description": "",
+  "category": "bungalowkitchen",
+  "keywords": ["list-galleries"],
+  "_viewScript": ["blocks/list-galleries"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

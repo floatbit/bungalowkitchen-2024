@@ -1,0 +1,12 @@
+{
+  "name": "acf/events",
+  "title": "Events",
+  "description": "",
+  "category": "bungalowkitchen",
+  "keywords": ["events"],
+  "_viewScript": ["blocks/events"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

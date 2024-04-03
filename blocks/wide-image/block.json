@@ -1,0 +1,12 @@
+{
+  "name": "acf/wide-image",
+  "title": "Wide Image",
+  "description": "",
+  "category": "bungalowkitchen",
+  "keywords": ["wide-image"],
+  "_viewScript": ["blocks/wide-image"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

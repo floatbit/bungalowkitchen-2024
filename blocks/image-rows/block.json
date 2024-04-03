@@ -1,0 +1,12 @@
+{
+  "name": "acf/image-rows",
+  "title": "Rows of Images",
+  "description": "",
+  "category": "bungalowkitchen",
+  "keywords": ["image-rows"],
+  "_viewScript": ["blocks/image-rows"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}
