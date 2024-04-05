@@ -13,10 +13,11 @@
     </div>
   </div>
   
-  <nav class="main-menu flex items-center">
-    <div class="container container-fluid">
-      <?php wp_nav_menu(array('menu' => 'Main')); ?>
-    </div>
-  </nav>
-
 </header>
+
+<nav class="main-menu flex items-center">
+  <div class="container container-fluid">
+    <?php wp_nav_menu(array('menu' => 'Main')); ?>
+  </div>
+</nav>
+
