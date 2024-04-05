@@ -37,5 +37,5 @@ add_action('wp_enqueue_scripts', function () {
 
     // Register script for blocks
     // If needed, separate the script per block
-    wp_register_script('blocks/text', assets_url('/dist/blocks/text.js'), ['jquery'], null, true);
+    //wp_register_script('blocks/text', assets_url('/dist/blocks/text.js'), ['jquery'], null, true);
 });

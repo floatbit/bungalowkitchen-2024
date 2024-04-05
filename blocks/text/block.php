@@ -28,8 +28,12 @@ if ( ! empty( $block['align'] ) ) {
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/text
-        </h2>
+        <div class="text">
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur molestias quasi perspiciatis iure cumque non, suscipit animi corporis vero in quaerat velit enim dolores minima aut, nisi accusamus tempore ipsam, rem dignissimos! Architecto ullam magni voluptates aut pariatur ex eveniet!</p>
+            <p class="cta">
+                <a href="#" class="button">Make a Reservation</a>
+            </p>
+        </div>
     </div>
 </div>

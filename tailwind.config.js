@@ -60,11 +60,15 @@ module.exports = {
     fontFamily: {
       sans: ['Apercu', 'sans-serif'],
     },
-    // extend: {
-    //   colors: {
-    //     primary: '#0069FF'
-    //   }
-    // },
+    extend: {
+      colors: {
+        white: '#FFFDF8',
+        green: '#7D9383',
+        brown: '#4A3431',
+        black: '#31261D',
+        salmon: '#F28365'
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

@@ -2,11 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@import 'mixins';
+
 @layer base {
+  html {
+    font-size: 18px;
+    font-size: 26px;
+  }
   body {
-    @apply font-sans antialiased;
+    @apply font-sans antialiased font-light;
   }
 
+  p {
+    @apply mb-5;
+    line-height: 1.21;
+  }
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
   }
@@ -16,7 +27,9 @@
   }
 
   h2 {
-    @apply text-4xl;
+    @apply mb-3;
+    font-size: 36px;
+    font-size: 50px;
   }
 
   h3 {
@@ -46,4 +59,58 @@
 .image-test {
   @apply w-80 h-80 bg-cover;
   background-image: url('./images/sample-image.jpg');
+}
+
+header {
+  img {
+    display: inline-block;
+  }
+  .lifeguard {
+    max-width: 400px;
+  }
+  .bird {
+    max-width: 200px;
+  }
+  .logo {
+    max-width: 420px;
+    margin-bottom: 140px;
+    margin-top: 140px;
+  }
+}
+
+nav.main-menu {
+  @apply pt-[34px] pb-[30px];
+  @apply bg-green font-bold uppercase text-center;
+  li {
+    @apply inline-block mx-8;
+  }
+  a {
+    @apply text-white;
+  }
+}
+
+p.cta {
+
+}
+p.cta .button,
+.button {
+  @apply font-normal uppercase leading-none;
+  display: inline-block;
+  border: 2px solid theme('colors.salmon');
+  padding: 18px 20px 16px 20px;
+  position: relative;
+  &:after {
+    content: '';
+    border: 1px solid theme('colors.salmon');
+    position: absolute;
+    display: block;
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+  }
+  &:hover {
+    @apply text-white;
+    background-color: theme('colors.salmon');
+  }
 }

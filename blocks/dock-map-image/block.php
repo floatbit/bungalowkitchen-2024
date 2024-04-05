@@ -27,9 +27,17 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-    <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/dock-map-image
-        </h2>
+<div class="flex justify-end">
+        <div class="basis-3/5 text-center">
+            <img src="<?php echo assets_url('/dist/images/map.png'); ?>" class="map" />
+        </div>
+    </div>
+    <div class="flex justify-end">
+        <div class="basis-2/5 self-end relative">
+            <img src="<?php echo assets_url('/dist/images/dock-gold.png'); ?>" class="dock" />
+        </div>
+        <div class="basis-3/5 text-center">
+            <img src="<?php echo assets_url('/dist/images/MM-BB-Bungalow-1-scaled 1.jpg'); ?>" class="photo" />
+        </div>
     </div>
 </div>

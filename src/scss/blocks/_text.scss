@@ -1,0 +1,8 @@
+.block-text {
+  @apply py-[70px];
+  text-align: center;
+  .text {
+    @apply mx-auto;
+    max-width: 814px;
+  }
+}

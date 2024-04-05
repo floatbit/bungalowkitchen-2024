@@ -1,5 +1,14 @@
 @font-face {
   font-family: 'Apercu';
+  src: url('./fonts/apercu-light-pro.woff2') format('woff2'),
+       url('./fonts/apercu-light-pro.woff') format('woff'),
+       url('./fonts/apercu-light-pro.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu';
   src: url('./fonts/apercu-regular.eot');
   src: url('./fonts/apercu-regular.eot?#iefix') format('embedded-opentype'),
        url('./fonts/apercu-regular.woff2') format('woff2'),
