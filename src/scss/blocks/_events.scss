@@ -1,2 +1,30 @@
 .block-events {
+  @apply pt-11;
+
+  .event {
+    @apply mb-8;
+  }
+  .event:last-child {
+
+  }
+  h3 {
+    @apply mb-0;
+  }
+  h2 {
+    @apply text-center uppercase font-light flex content-center mb-8;
+    span {
+      display: block;
+      white-space: nowrap;
+    }
+    span.text {
+      @apply mx-7 font-bold;
+      font-size: 32px;
+    }
+    span.line {
+      @apply self-center;
+      width: 100%;
+      height: 5px;
+      background-color: theme('colors.green');
+    }
+  }
 }

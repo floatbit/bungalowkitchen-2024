@@ -28,8 +28,12 @@ if ( ! empty( $block['align'] ) ) {
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/boat-hand
-        </h2>
+        <div class="flex justify-center">
+            <div class="basis-10/12">
+                <p>
+                    <img src="<?php echo assets_url('/dist/images/boat-hand.png'); ?>" />
+                </p>
+            </div>
+        </div>
     </div>
 </div>

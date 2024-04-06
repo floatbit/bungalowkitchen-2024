@@ -11,6 +11,7 @@
     "/dist/images/logo-primary.png": "/dist/images/logo-primary.png",
     "/dist/images/map.png": "/dist/images/map.png",
     "/dist/images/sample-image.jpg": "/dist/images/sample-image.jpg",
+    "/dist/images/seashell-salmon.png": "/dist/images/seashell-salmon.png",
     "/dist/fonts/apercu-bold.eot": "/dist/fonts/apercu-bold.eot",
     "/dist/fonts/apercu-bold.ttf": "/dist/fonts/apercu-bold.ttf",
     "/dist/fonts/apercu-bold.woff": "/dist/fonts/apercu-bold.woff",
@@ -36,5 +37,7 @@
     "/dist/fonts/webfonts/apercu-regular.ttf": "/dist/fonts/webfonts/apercu-regular.ttf",
     "/dist/fonts/webfonts/apercu-regular.woff": "/dist/fonts/webfonts/apercu-regular.woff",
     "/dist/fonts/webfonts/apercu-regular.woff2": "/dist/fonts/webfonts/apercu-regular.woff2",
-    "/dist/images/seashell-salmon.png": "/dist/images/seashell-salmon.png"
+    "/dist/images/boat-hand.png": "/dist/images/boat-hand.png",
+    "/dist/images/boat.png": "/dist/images/boat.png",
+    "/dist/images/handpoing-salmon.png": "/dist/images/handpoing-salmon.png"
 }

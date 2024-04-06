@@ -33,7 +33,8 @@
   }
 
   h3 {
-    @apply text-3xl;
+    @apply mb-3;
+    font-size: 32px;
   }
 
   h4 {
@@ -52,6 +53,10 @@
 
 @import 'fonts';
 @import 'blocks/index';
+
+main {
+  min-height: 100dvh;
+}
 
 .antialiased {
   -webkif-font-smoothing: antialiased;

@@ -32,7 +32,8 @@ if ( ! empty( $block['align'] ) ) {
             <h2>Lorem Ipsum</h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur molestias quasi perspiciatis iure cumque non, suscipit animi corporis vero in quaerat velit enim dolores minima aut, nisi accusamus tempore ipsam, rem dignissimos! Architecto ullam magni voluptates aut pariatur ex eveniet!</p>
             <p class="cta">
-                <a href="#" class="button">Make a Reservation</a>
+                <a href="#" class="button">Learn More</a>
+                <a href="#" class="button">Lorem Ipsum</a>
             </p>
         </div>
     </div>

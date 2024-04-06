@@ -9,9 +9,23 @@ export default class Menus {
 
   setup() {
     this.menus.forEach(menu => {
-      menu.addEventListener('click', function(e) {
+      menu.addEventListener('click', (e) => {
         e.preventDefault()
-        console.log('clicked')
+        var postId = e.target.getAttribute('data-post-id');
+        // Select all elements with the class "payload"
+        var payloadElements = this.el.querySelectorAll('.payload');
+
+        // Iterate over the NodeList and add the "hidden" class to each element
+        payloadElements.forEach(function(element) {
+            element.classList.add('hidden');
+
+            if (element.getAttribute('data-post-id') === postId) {
+              element.classList.remove('hidden');
+            }
+            
+        });
+
+        console.log(postId)
       })
     })
   }
