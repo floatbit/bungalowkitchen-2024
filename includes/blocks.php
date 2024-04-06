@@ -12,7 +12,6 @@ add_action('init', function () {
     register_block_type($dir . '/blocks/instagram');
     register_block_type($dir . '/blocks/menus');
     register_block_type($dir . '/blocks/events');
-    register_block_type($dir . '/blocks/events-past');
     register_block_type($dir . '/blocks/list-rooms');
     register_block_type($dir . '/blocks/boat-hand');
     register_block_type($dir . '/blocks/tripleseat-form');
@@ -35,7 +34,6 @@ add_filter('allowed_block_types_all', function($allowed_blocks, $editor_context)
                 'acf/instagram',
                 'acf/menus',
                 'acf/events',
-                'acf/events-past',
                 'acf/list-rooms',
                 'acf/boat-hand',
                 'acf/tripleseat-form',
