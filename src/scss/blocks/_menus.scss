@@ -1,2 +1,27 @@
 .block-menus {
+  
+  @apply py-[70px] pb-[120px];
+
+  .nav-menus {
+    @apply pb-[70px];
+  }
+
+  .intro-image {
+    @apply pb-[140px];
+  }
+
+  .seashell {
+    width: 280px;
+    position: absolute;
+    max-width: none;
+    margin-top: -160px;
+  }
+
+  h4 {
+    @apply mt-8;
+  }
+
+  h4:first-child {
+    margin-top: 0;
+  }
 }

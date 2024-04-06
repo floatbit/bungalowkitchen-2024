@@ -1,6 +1,8 @@
 import $ from 'jquery'
-import HelloWorld from '@/hello-world'
+import Menus from '@/blocks/menus'
 
 (function ($) {
-  new HelloWorld()
+  document.querySelectorAll('.block-menus').forEach(el => {
+    new Menus(el)
+  })
 })($)

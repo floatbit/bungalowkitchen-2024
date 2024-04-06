@@ -28,8 +28,124 @@ if ( ! empty( $block['align'] ) ) {
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/menus
-        </h2>
+        <div class="nav-menus">
+            <div class="flex justify-center">
+                <div class="basis-10/12">
+                    <div class="flex justify-center">
+                        <a href="#" class="basis-1/4 button" data-post-id="10">Brunch</a>
+                        <a href="#" class="basis-1/4 button" data-post-id="11">Dinner</a>
+                        <a href="#" class="basis-1/4 button">Drinks</a>
+                        <a href="#" class="basis-1/4 button">Dessert</a>
+                    </div>
+                    <div class="flex justify-center">
+                        <a href="#" class="basis-1/4 button">Sunset Strips</a>
+                        <a href="#" class="basis-1/4 button">Tasting Menu</a>
+                        <a href="#" class="basis-1/4 button">Sunday Supper</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="intro-image" data-post-id="0">
+            <div class="flex justify-center">
+                <div class="basis-1/12 self-end">
+                    <img src="<?php echo assets_url('/dist/images/seashell-salmon.png'); ?>" class="seashell"/>
+                </div>
+                <div class="basis-10/12">
+                    <img src="<?php echo assets_url('/dist/images/220117_Bungalow13522 1.jpg'); ?>"/>
+                </div>
+                <div class="basis-1/12">
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-set hidden" data-post-id="10">
+            <div class="flex justify-center">
+                <div class="basis-5/12">
+                        <?php for($i = 0; $i < 3; $i++): ?>
+                        <h4>10 The Caviar Co. & Hog Island Oysters</h4>
+                        <p>
+                            <strong>Lorem Ipsum</strong><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
+                            <em>Lorem, ipsum dolor.</em>
+                        </p>
+                        <p>
+                            <strong>Lorem Ipsum</strong><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
+                            <em>Lorem, ipsum dolor.</em>
+                        </p>
+                        <p>
+                            <strong>Lorem Ipsum</strong><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
+                            <em>Lorem, ipsum dolor.</em>
+                        </p>
+                        <?php endfor; ?>
+                    </div>
+                    <div class="basis-5/12">
+                        <h4>Starters</h4>
+                        <p>
+                            <strong>Lorem Ipsum</strong><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
+                            <em>Lorem, ipsum dolor.</em>
+                        </p>
+                        <p>
+                            <strong>Lorem Ipsum</strong><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
+                            <em>Lorem, ipsum dolor.</em>
+                        </p>
+                        <p>
+                            <strong>Lorem Ipsum</strong><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
+                            <em>Lorem, ipsum dolor.</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-set hidden" data-post-id="10">
+            <div class="flex justify-center">
+                <div class="basis-5/12">
+                        <?php for($i = 0; $i < 3; $i++): ?>
+                        <h4>11 The Caviar Co. & Hog Island Oysters</h4>
+                        <p>
+                            <strong>Lorem Ipsum</strong><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
+                            <em>Lorem, ipsum dolor.</em>
+                        </p>
+                        <p>
+                            <strong>Lorem Ipsum</strong><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
+                            <em>Lorem, ipsum dolor.</em>
+                        </p>
+                        <p>
+                            <strong>Lorem Ipsum</strong><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
+                            <em>Lorem, ipsum dolor.</em>
+                        </p>
+                        <?php endfor; ?>
+                    </div>
+                    <div class="basis-5/12">
+                        <h4>Starters</h4>
+                        <p>
+                            <strong>Lorem Ipsum</strong><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
+                            <em>Lorem, ipsum dolor.</em>
+                        </p>
+                        <p>
+                            <strong>Lorem Ipsum</strong><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
+                            <em>Lorem, ipsum dolor.</em>
+                        </p>
+                        <p>
+                            <strong>Lorem Ipsum</strong><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
+                            <em>Lorem, ipsum dolor.</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

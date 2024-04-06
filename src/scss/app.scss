@@ -18,7 +18,7 @@
     @apply mb-5;
     line-height: 1.21;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6, strong {
     @apply font-bold;
   }
 
@@ -37,7 +37,8 @@
   }
 
   h4 {
-    @apply text-2xl;
+    @apply mb-3 uppercase text-green;
+    font-size: 26px;
   }
 
   h5 {
@@ -89,16 +90,11 @@ nav.main-menu {
   }
 }
 
-p.cta {
-
-}
 p.cta .button,
 .button {
-  @apply font-normal uppercase leading-none;
-  display: inline-block;
+  @apply font-normal uppercase leading-none inline-block text-center relative m-2;
   border: 2px solid theme('colors.salmon');
   padding: 18px 20px 16px 20px;
-  position: relative;
   &:after {
     content: '';
     border: 1px solid theme('colors.salmon');
