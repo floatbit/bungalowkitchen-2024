@@ -54,6 +54,13 @@
 @import 'fonts';
 @import 'blocks/index';
 
+a {
+  @apply text-black;
+}
+a:hover {
+  @apply text-salmon;
+}
+
 main {
   min-height: 100dvh;
 }
@@ -93,6 +100,9 @@ nav.main-menu {
   a {
     @apply text-white;
   }
+  a:hover {
+    @apply text-black;
+  }
 }
 
 p.cta .button,
@@ -114,4 +124,9 @@ p.cta .button,
     @apply text-white;
     background-color: theme('colors.salmon');
   }
+}
+
+footer {
+  background-color: theme('colors.green');
+  color: theme('colors.white');
 }

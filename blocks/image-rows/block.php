@@ -28,8 +28,15 @@ if ( ! empty( $block['align'] ) ) {
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/image-rows
-        </h2>
+    <?php $rows = get_field('rows');?>
+    <?php foreach($rows as $row):?>
+        <div class="flex gap-4">
+            <?php foreach($row['images'] as $image):?>
+            <div class="image" style="flex: <?php print $image['width'] / $image['height'];?>;">
+                <img src="<?php print $image['url'];?>" alt="">
+            </div>
+            <?php endforeach;?>
+        </div>
+    <?php endforeach;?>
     </div>
 </div>

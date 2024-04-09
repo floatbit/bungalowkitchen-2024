@@ -27,72 +27,67 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-    <div class="container">
-        <div class="flex justify-center">
-            <div class="basis-11/12">
-                <?php for($i = 0; $i < 3; $i++): ?>
-                <div class="event">
-                    <div class="flex gap-8">
-                        <div class="basis-1/2">
-                            <p>
-                                <img src="http://placehold.it/800x1024" alt="">
-                            </p>
-                        </div>
-                        <div class="basis-1/2">
-                            <h3>Lorem Ipsum</h3>
-                            <p class="date uppercase">Mar. 10, 2024</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, rem.</p>
-                            <p>
-                                <strong>Wines by:</strong><br>
-                                Lorem ipsum<br>
-                                Lorem ipsum<br>
-                                Lorem ipsum<br>
-                                Lorem ipsum<br>
-                                Lorem ipsum
-                            </p>
-                        </div>
-                    </div>
+    <div class="container container-narrow">
+        <?php for($i = 0; $i < 3; $i++): ?>
+        <div class="event">
+            <div class="flex gap-8">
+                <div class="basis-1/2">
+                    <p>
+                        <img src="http://placehold.it/800x1024" alt="">
+                    </p>
                 </div>
-                <?php endfor; ?>
+                <div class="basis-1/2">
+                    <h3>Lorem Ipsum</h3>
+                    <p class="date uppercase">Mar. 10, 2024</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, rem.</p>
+                    <p>
+                        <strong>Wines by:</strong><br>
+                        Lorem ipsum<br>
+                        Lorem ipsum<br>
+                        Lorem ipsum<br>
+                        Lorem ipsum<br>
+                        Lorem ipsum
+                    </p>
+                </div>
             </div>
         </div>
+        <?php endfor; ?>
     </div>
+</div>
+</div>
 
-    <h2>
-        <span class="shrink line"></span>
-        <span class="grow text">Past Events</span>
-        <span class="shrink line"></span>
-    </h2>
+<h2>
+<span class="shrink line"></span>
+<span class="grow text">Past Events</span>
+<span class="shrink line"></span>
+</h2>
 
-    <div class="container">
-        <div class="flex justify-center">
-            <div class="basis-11/12">
-                <?php for($i = 0; $i < 3; $i++): ?>
-                <div class="event">
-                    <div class="flex gap-8">
-                        <div class="basis-1/2">
-                            <p>
-                                <img src="http://placehold.it/800x1024" alt="">
-                            </p>
-                        </div>
-                        <div class="basis-1/2">
-                            <h3>Lorem Ipsum</h3>
-                            <p class="date uppercase">Mar. 10, 2024</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, rem.</p>
-                            <p>
-                                <strong>Wines by:</strong><br>
-                                Lorem ipsum<br>
-                                Lorem ipsum<br>
-                                Lorem ipsum<br>
-                                Lorem ipsum<br>
-                                Lorem ipsum
-                            </p>
-                        </div>
-                    </div>
+<div class="container">
+<div class="flex justify-center">
+    <div class="basis-11/12">
+        <?php for($i = 0; $i < 3; $i++): ?>
+        <div class="event">
+            <div class="flex gap-8">
+                <div class="basis-1/2">
+                    <p>
+                        <img src="http://placehold.it/800x1024" alt="">
+                    </p>
                 </div>
-                <?php endfor; ?>
+                <div class="basis-1/2">
+                    <h3>Lorem Ipsum</h3>
+                    <p class="date uppercase">Mar. 10, 2024</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, rem.</p>
+                    <p>
+                        <strong>Wines by:</strong><br>
+                        Lorem ipsum<br>
+                        Lorem ipsum<br>
+                        Lorem ipsum<br>
+                        Lorem ipsum<br>
+                        Lorem ipsum
+                    </p>
+                </div>
             </div>
         </div>
+        <?php endfor; ?>
     </div>
-    
 </div>

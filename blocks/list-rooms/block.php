@@ -27,25 +27,21 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-    <div class="container">
-        <div class="flex justify-center">
-            <div class="basis-11/12">
-                <?php for($i = 0; $i < 3; $i++): ?>
-                <div class="room">
-                    <div class="flex gap-8">
-                        <div class="basis-1/2">
-                            <p>
-                                <img src="http://placehold.it/1000x680" alt="">
-                            </p>
-                        </div>
-                        <div class="basis-1/2">
-                            <h3 class="uppercase">The Listening Room</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A incidunt fugit sed consequuntur earum iure nostrum. Quisquam vero officia esse. Suscipit asperiores deserunt commodi quaerat assumenda minus eum consectetur laborum. Obcaecati culpa sed neque magni officia, enim architecto doloremque nesciunt!</p>
-                        </div>
-                    </div>
+    <div class="container container-narrow">
+        <?php for($i = 0; $i < 3; $i++): ?>
+        <div class="room">
+            <div class="flex gap-8">
+                <div class="basis-1/2">
+                    <p>
+                        <img src="http://placehold.it/1000x680" alt="">
+                    </p>
                 </div>
-                <?php endfor; ?>
+                <div class="basis-1/2">
+                    <h3 class="uppercase">The Listening Room</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A incidunt fugit sed consequuntur earum iure nostrum. Quisquam vero officia esse. Suscipit asperiores deserunt commodi quaerat assumenda minus eum consectetur laborum. Obcaecati culpa sed neque magni officia, enim architecto doloremque nesciunt!</p>
+                </div>
             </div>
         </div>
+        <?php endfor; ?>
     </div>
 </div>

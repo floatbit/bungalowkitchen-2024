@@ -9,36 +9,38 @@ const containerStyles = ({ addComponents }) => {
     paddingLeft: '20px',
     paddingRight: '20px',
     '@screen md': {
-      paddingLeft: '30px',
-      paddingRight: '30px'
-    },
-    '@screen lg': {
       paddingLeft: '40px',
       paddingRight: '40px'
     },
+    '@screen lg': {
+      paddingLeft: '60px',
+      paddingRight: '60px'
+    },
     '@screen 2xl': {
-      paddingLeft: '75px',
-      paddingRight: '75px'
+      paddingLeft: '80px',
+      paddingRight: '80px'
     }
   };
 
   addComponents({
     '.container': {
       ...containerBase,
+      '@screen md': {
+        maxWidth: '1500px'
+      },
       '@screen xl': {
         width: '100%',
-        maxWidth: '1500px',
-        paddingLeft: '3.75rem',
-        paddingRight: '3.75rem',
       }
     },
     '.container-fluid': {
       ...containerBase,
-      '@screen lg': {
-        paddingLeft: '45px',
-        paddingRight: '45px'
-      }
     },
+    '.container-narrow': {
+      ...containerBase,
+      '@screen md': {
+        maxWidth: '1290px',
+      },
+    }
   });
 }
 

@@ -27,9 +27,12 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-    <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/tree-boat-image
-        </h2>
+    <div class="flex justify-end">
+        <div class="basis-5/12 self-end relative">
+            <img src="<?php echo assets_url('/dist/images/tree-boat.png'); ?>" class="tree-boat" />
+        </div>
+        <div class="basis-7/12 text-right">
+            <img src="<?php echo assets_url('/dist/images/DSC_1966.jpg'); ?>" class="photo" />
+        </div>
     </div>
 </div>

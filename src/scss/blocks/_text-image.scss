@@ -1,2 +1,9 @@
 .block-text-image {
+  .text {
+    @apply py-[80px];
+  }
+  img {
+    @apply inline-block;
+    max-width: 95%;
+  }
 }

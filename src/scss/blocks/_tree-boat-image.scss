@@ -1,2 +1,16 @@
 .block-tree-boat-image {
+  @apply pt-[70px];
+  img {
+    display: inline-block;
+  }
+  .tree-boat {
+    position: relative;
+    width: calc(100% + 50%);
+    max-width: none;
+  }
+  .photo {
+    width: 100%;
+    max-width: 95%;
+  }
+
 }

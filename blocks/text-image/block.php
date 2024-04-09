@@ -27,9 +27,29 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-    <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/text-image
-        </h2>
+    <div class="container container-narrow">
+        <div class="flex">
+            <div class="basis-5/12">
+                <div class="text">
+                    <h2>Need to Reach Us?</h2>
+                    <h4>Call 415-366-4088</h4>
+                    <p>
+                        <strong>Reservations</strong><br>
+                        <a href="mailto:reservations.tib@bungalowkitchen.com">reservations.tib@bungalowkitchen.com</a>
+                    </p>
+                    <p>
+                        <strong>Events</strong><br>
+                        <a href="mailto:tiburon.events@bungalowkitchen.com">tiburon-events@bungalowkitchen.com</a>
+                    </p>
+                    <p>
+                        <strong>General Information</strong><br>
+                        <a href="mailto:tiburon.info@bungalowkitchen.com">tiburon-info@bungalowkitchen.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="basis-7/12 text-center">
+                <img src="<?php echo assets_url('/dist/images/mic-gold.png'); ?>" class="mic" />
+            </div>
+        </div>
     </div>
 </div>

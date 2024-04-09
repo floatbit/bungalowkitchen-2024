@@ -1,2 +1,9 @@
 .block-image-rows {
+  @apply pt-11;
+  .image {
+    @apply mb-4;
+  }
+  img {
+    width: 100%;
+  }
 }
