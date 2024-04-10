@@ -9,9 +9,12 @@
   html {
     font-size: 18px;
     font-size: 26px;
+    width: 100vw;
+    overflow-x: hidden;
   }
   body {
     @apply font-sans antialiased font-light;
+    overflow-x: hidden;
   }
 
   p {
@@ -79,15 +82,29 @@ header {
     display: inline-block;
   }
   .lifeguard {
+    width: 100%;
     max-width: 400px;
   }
   .bird {
+    width: 100%;
     max-width: 200px;
   }
   .logo {
-    max-width: 420px;
-    margin-bottom: 140px;
-    margin-top: 140px;
+    width: 100%;
+    margin-bottom: 40px;
+    margin-top: 80px;
+    max-width: 260px;
+    @screen md {
+      max-width: 280px;
+      margin-bottom: 140px;
+      margin-top: 140px;
+    }
+    @screen lg {
+      max-width: 360px;
+    }
+    @screen xl {
+      max-width: 400px;
+    }
   }
 }
 
@@ -95,13 +112,27 @@ nav.main-menu {
   @apply pt-[34px] pb-[30px];
   @apply bg-green font-bold uppercase text-center;
   li {
-    @apply inline-block mx-8;
+    @apply inline-block text-center relative;
   }
   a {
     @apply text-white;
+    @include pixelsToResponsiveUnit(padding-left, 0px, 30px, 300px, 1200);
+    @include pixelsToResponsiveUnit(padding-right, 0px, 30px, 300px, 1200);
   }
   a:hover {
     @apply text-black;
+  }
+  img {
+    @apply hidden absolute max-w-none;
+    height: 150px;
+    top: -90px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  li:hover {
+    img {
+      @apply inline-block;
+    }
   }
 }
 

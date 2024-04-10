@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-$html-font-size: 18px;
+$html-font-size: 26px;
 
 @function strip-units($number) {
   @return math.div($number, ($number * 0 + 1));
@@ -15,7 +15,7 @@ $html-font-size: 18px;
   $minimum,
   $preferred,
   $maximum,
-  $preferred_viewport_width: 1024px
+  $preferred_viewport_width: 1200px
 ) {
   $clamp_parameter_1: rem($minimum);
   $clamp_parameter_2: strip-units((math.div(($preferred + 0), $preferred_viewport_width)) * 100) * 1vw;
@@ -30,7 +30,7 @@ $html-font-size: 18px;
   $minimum,
   $preferred,
   $maximum,
-  $preferred_viewport_width: 1024px
+  $preferred_viewport_width: 1200px
 ) {
   #{$property_name}: calculateClamp($minimum, $preferred, $maximum, $preferred_viewport_width);
 }
