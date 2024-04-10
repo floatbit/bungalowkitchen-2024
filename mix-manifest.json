@@ -3,6 +3,7 @@
     "/dist/editor.css": "/dist/editor.css",
     "/dist/app.css": "/dist/app.css",
     "/dist/images/220117_Bungalow13522 1.jpg": "/dist/images/220117_Bungalow13522 1.jpg",
+    "/dist/images/DSC_1966.jpg": "/dist/images/DSC_1966.jpg",
     "/dist/images/MM-BB-Bungalow-1-scaled 1.jpg": "/dist/images/MM-BB-Bungalow-1-scaled 1.jpg",
     "/dist/images/bird.png": "/dist/images/bird.png",
     "/dist/images/boat-hand.png": "/dist/images/boat-hand.png",
@@ -10,11 +11,15 @@
     "/dist/images/dock-gold.jpg": "/dist/images/dock-gold.jpg",
     "/dist/images/dock-gold.png": "/dist/images/dock-gold.png",
     "/dist/images/handpoing-salmon.png": "/dist/images/handpoing-salmon.png",
+    "/dist/images/icon-facebook.png": "/dist/images/icon-facebook.png",
+    "/dist/images/icon-instagram.png": "/dist/images/icon-instagram.png",
     "/dist/images/lifeguard-gold.png": "/dist/images/lifeguard-gold.png",
     "/dist/images/logo-primary.png": "/dist/images/logo-primary.png",
     "/dist/images/map.png": "/dist/images/map.png",
+    "/dist/images/mic-gold.png": "/dist/images/mic-gold.png",
     "/dist/images/sample-image.jpg": "/dist/images/sample-image.jpg",
     "/dist/images/seashell-salmon.png": "/dist/images/seashell-salmon.png",
+    "/dist/images/tree-boat.png": "/dist/images/tree-boat.png",
     "/dist/fonts/apercu-bold.eot": "/dist/fonts/apercu-bold.eot",
     "/dist/fonts/apercu-bold.ttf": "/dist/fonts/apercu-bold.ttf",
     "/dist/fonts/apercu-bold.woff": "/dist/fonts/apercu-bold.woff",
@@ -39,8 +44,5 @@
     "/dist/fonts/webfonts/apercu-regular.eot": "/dist/fonts/webfonts/apercu-regular.eot",
     "/dist/fonts/webfonts/apercu-regular.ttf": "/dist/fonts/webfonts/apercu-regular.ttf",
     "/dist/fonts/webfonts/apercu-regular.woff": "/dist/fonts/webfonts/apercu-regular.woff",
-    "/dist/fonts/webfonts/apercu-regular.woff2": "/dist/fonts/webfonts/apercu-regular.woff2",
-    "/dist/images/DSC_1966.jpg": "/dist/images/DSC_1966.jpg",
-    "/dist/images/tree-boat.png": "/dist/images/tree-boat.png",
-    "/dist/images/mic-gold.png": "/dist/images/mic-gold.png"
+    "/dist/fonts/webfonts/apercu-regular.woff2": "/dist/fonts/webfonts/apercu-regular.woff2"
 }
