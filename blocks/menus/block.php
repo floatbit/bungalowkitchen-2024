@@ -29,16 +29,14 @@ if ( ! empty( $block['align'] ) ) {
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container container-narrow">
         <div class="nav-menus">
-            <div class="flex justify-center">
-                <a href="#" class="basis-1/4 button" data-post-id="10">Brunch</a>
-                <a href="#" class="basis-1/4 button" data-post-id="11">Dinner</a>
-                <a href="#" class="basis-1/4 button">Drinks</a>
-                <a href="#" class="basis-1/4 button">Dessert</a>
-            </div>
-            <div class="flex justify-center">
-                <a href="#" class="basis-1/4 button">Sunset Strips</a>
-                <a href="#" class="basis-1/4 button">Tasting Menu</a>
-                <a href="#" class="basis-1/4 button">Sunday Supper</a>
+            <div class="flex gap-2 flex-wrap justify-center">
+                <a href="#" class="button" data-post-id="10">Brunch</a>
+                <a href="#" class="button" data-post-id="11">Dinner</a>
+                <a href="#" class="button">Drinks</a>
+                <a href="#" class="button">Dessert</a>
+                <a href="#" class="button">Sunset Strips</a>
+                <a href="#" class="button">Tasting Menu</a>
+                <a href="#" class="button">Sunday Supper</a>
             </div>
         </div>
     </div>
@@ -46,7 +44,7 @@ if ( ! empty( $block['align'] ) ) {
     <div class="container">
         <div class="intro-image payload" data-post-id="0">
             <div class="flex justify-center">
-                <div class="basis-1/12 self-end">
+                <div class="basis-1/12 send relative">
                     <img src="<?php echo assets_url('/dist/images/seashell-salmon.png'); ?>" class="seashell"/>
                 </div>
                 <div class="basis-10/12">
@@ -58,8 +56,8 @@ if ( ! empty( $block['align'] ) ) {
         </div>
         
         <div class="menu-set payload hidden" data-post-id="10">
-            <div class="flex justify-center">
-                <div class="basis-5/12">
+            <div class="md:grid grid-cols-2 gap-8 justify-center">
+                <div>
                         <?php for($i = 0; $i < 3; $i++): ?>
                         <h4>10 The Caviar Co. & Hog Island Oysters</h4>
                         <p>
@@ -79,7 +77,7 @@ if ( ! empty( $block['align'] ) ) {
                         </p>
                         <?php endfor; ?>
                 </div>
-                <div class="basis-5/12">
+                <div>
                     <h4>Starters</h4>
                     <p>
                         <strong>Lorem Ipsum</strong><br>
@@ -101,8 +99,8 @@ if ( ! empty( $block['align'] ) ) {
         </div>
 
         <div class="menu-set payload hidden" data-post-id="11">
-            <div class="flex justify-center">
-                <div class="basis-5/12">
+            <div class="md:grid grid-cols-2 gap-8 justify-center">
+                <div>
                     <?php for($i = 0; $i < 3; $i++): ?>
                     <h4>11 The Caviar Co. & Hog Island Oysters</h4>
                     <p>
@@ -122,7 +120,7 @@ if ( ! empty( $block['align'] ) ) {
                     </p>
                     <?php endfor; ?>
                 </div>
-                <div class="basis-5/12">
+                <div>
                     <h4>Starters</h4>
                     <p>
                         <strong>Lorem Ipsum</strong><br>

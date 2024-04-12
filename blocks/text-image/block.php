@@ -28,7 +28,7 @@ if ( ! empty( $block['align'] ) ) {
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container container-narrow">
-        <div class="flex">
+        <div class="md:flex">
             <div class="basis-5/12">
                 <div class="text">
                     <h2>Need to Reach Us?</h2>
@@ -47,7 +47,7 @@ if ( ! empty( $block['align'] ) ) {
                     </p>
                 </div>
             </div>
-            <div class="basis-7/12 text-center">
+            <div class="basis-7/12 text-center hidden md:block">
                 <img src="<?php echo assets_url('/dist/images/mic-gold.png'); ?>" class="mic" />
             </div>
         </div>

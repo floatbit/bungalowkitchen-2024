@@ -1,5 +1,8 @@
 .block-list-rooms {
   .room {
-    @apply mb-3;
+    @apply mb-8;
+    @screen md {
+      @apply mb-3;
+    }
   }
 }

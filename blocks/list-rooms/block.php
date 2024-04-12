@@ -30,7 +30,7 @@ if ( ! empty( $block['align'] ) ) {
     <div class="container container-narrow">
         <?php for($i = 0; $i < 3; $i++): ?>
         <div class="room">
-            <div class="flex gap-8">
+            <div class="md:flex gap-8">
                 <div class="basis-1/2">
                     <p>
                         <img src="http://placehold.it/1000x680" alt="">

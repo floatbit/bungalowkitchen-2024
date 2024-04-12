@@ -30,7 +30,7 @@ if ( ! empty( $block['align'] ) ) {
     <div class="container">
     <?php $rows = get_field('rows');?>
     <?php foreach($rows as $row):?>
-        <div class="flex gap-4">
+        <div class="flex gap-2 md:gap-4">
             <?php foreach($row['images'] as $image):?>
             <div class="image" style="flex: <?php print $image['width'] / $image['height'];?>;">
                 <img src="<?php print $image['url'];?>" alt="">
