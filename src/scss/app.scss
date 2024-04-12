@@ -243,3 +243,41 @@ footer {
     }
   }
 }
+
+.mobile-menu {
+  .mobile-menu-toggle {
+    @apply flex content-center overflow-hidden;
+    height: 60px;
+  }
+  .links {
+    @apply text-white text-center;
+    transition: max-height 800ms, opacity 400ms;
+    overflow-y: hidden;
+    opacity: 0;
+    max-height: 0;
+    a {
+      @apply text-white font-bold uppercase;
+    }
+    li {
+      @apply mb-5;
+    }
+    li:last-child {
+      @apply mb-2;
+    }
+    ul {
+      @apply py-3;
+    }
+  }
+  &.is-open {
+    .close {
+      @apply inline-block;
+    }
+    .bars {
+      @apply hidden;
+    }
+    .links {
+      opacity: 1;
+      max-height: 800px;
+    }
+  }
+}
