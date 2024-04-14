@@ -109,6 +109,7 @@ header {
 }
 
 nav.main-menu {
+  @apply mb-10;
   @apply pt-[34px] pb-[30px];
   @apply bg-green font-bold uppercase text-center;
   li {

@@ -1,10 +1,5 @@
 .block-menus {
   
-  @apply py-[35px] pb-[60px];
-  @screen md {
-    @apply py-[70px] pb-[120px];
-  }
-
   .nav-menus {
     @apply pb-[30px];
   }

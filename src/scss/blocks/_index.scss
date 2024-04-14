@@ -24,3 +24,23 @@
 @import 'text-image';
 
 @import 'list-rooms';
+
+.block-bottom-margin-none {
+  @apply mb-0;
+}
+
+.block-bottom-margin-small {
+  @apply mb-8;
+}
+
+.block-bottom-margin-medium {
+  @apply mb-14;
+}
+
+.block-bottom-margin-large {
+  @apply mb-20;
+}
+
+.block-bottom-margin-extra-large {
+  @apply mb-24;
+}
