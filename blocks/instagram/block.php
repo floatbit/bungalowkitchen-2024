@@ -24,12 +24,15 @@ if ( ! empty( $block['className'] ) ) {
 if ( ! empty( $block['align'] ) ) {
     $classes .= ' align' . $block['align'];
 }
+
+$classes .= ' ' . get_field('bottom_margin');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-    <div class="container">
-        <h2 class="pt-[100px] pb-[100px]">
-            TODO: blocks/instagram
+    <div class="container container-narrow">
+        <h2 class="mb-0">
+            <a href="https://instagram.com/bungalowkitchen" target="_blank">@bungalowkitchen</a>
         </h2>
+        <?php print apply_filters( 'the_content', get_field('instagram_shortcode') ); ?>
     </div>
 </div>
