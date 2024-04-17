@@ -29,6 +29,7 @@ $classes .= ' ' . get_field('bottom_margin');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
+    <div id="tripleseat-form"></div>
     <div class="container container-narrow">
         <script src="https://api.tripleseat.com/v1/leads/ts_script.js?lead_form_id=18236&public_key=6721006b41e5cf87527b0bd3563803e12fd01192"></script>
     </div>

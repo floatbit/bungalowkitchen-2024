@@ -28,32 +28,51 @@ if ( ! empty( $block['align'] ) ) {
 $classes .= ' ' . get_field('bottom_margin');
 ?>
 
+<?php
+    $options = array();
+    $options['start-date'] = date('m/d/Y');
+    $options['order'] = 'asc';
+    $upcoming_events = bungalowkitchen_get_events($options);
+
+    $options = array();
+    $options['past'] = true;
+    $options['order'] = 'desc';
+    $past_events = bungalowkitchen_get_events($options);
+
+?>
+
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container container-narrow">
-        <?php for($i = 0; $i < 3; $i++): ?>
+        <?php foreach($upcoming_events as $event): ?>
+        <?php $event_id = $event->ID; ?>
         <div class="event">
             <div class="md:flex gap-4 md:gap-8">
                 <div class="basis-5/12 md:basis-1/2">
                     <p>
-                        <img src="http://placehold.it/800x1024" alt="">
+                        <?php print get_the_post_thumbnail($event_id, 'full');?>
                     </p>
                 </div>
                 <div class="basis-7/12 md:basis-1/2">
-                    <h3>Lorem Ipsum</h3>
-                    <p class="date uppercase">Mar. 10, 2024</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, rem.</p>
-                    <p>
-                        <strong>Wines by:</strong><br>
-                        Lorem ipsum<br>
-                        Lorem ipsum<br>
-                        Lorem ipsum<br>
-                        Lorem ipsum<br>
-                        Lorem ipsum
+                    <h3><?php print get_the_title($event_id);?></h3>
+                    <p class="date uppercase">
+                        <?php if (get_field('custom_date_and_time', $event_id)):?>
+                        <?php print get_field('custom_date_and_time', $event_id);?>
+                        <?php else:?>
+                        <?php print bungalowkitchen_get_event_readable_date($event_id);?>
+                        <?php endif;?>
                     </p>
+                    <?php print apply_filters('the_content', $event->post_content);?>
+                    <?php if ($links = get_field('links', $event_id)):?>
+                    <p class="cta">
+                      <?php foreach($links as $link):?>
+                      <a class="btn" href="<?php echo $link['link']['url']; ?>" target="<?php print $link['link']['target'];?>"><?php echo $link['link'] && $link['link']['title'] ? $link['link']['title'] : 'More Info'; ?></a>
+                      <?php endforeach;?>
+                    </p>
+                    <?php endif;?>
                 </div>
             </div>
         </div>
-        <?php endfor; ?>
+        <?php endforeach; ?>
     </div>
 
 
@@ -63,34 +82,29 @@ $classes .= ' ' . get_field('bottom_margin');
         <span class="shrink line"></span>
     </h2>
 
-    <div class="container">
-        <div class="flex">
-            <div class="basis-11/12">
-                <?php for($i = 0; $i < 3; $i++): ?>
-                <div class="event">
-                    <div class="md:flex gap-4 md:gap-8">
-                        <div class="basis-5/12 md:basis-1/2">
-                            <p>
-                                <img src="http://placehold.it/800x1024" alt="">
-                            </p>
-                        </div>
-                        <div class="basis-7/12 md:basis-1/2">
-                            <h3>Lorem Ipsum</h3>
-                            <p class="date uppercase">Mar. 10, 2024</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, rem.</p>
-                            <p>
-                                <strong>Wines by:</strong><br>
-                                Lorem ipsum<br>
-                                Lorem ipsum<br>
-                                Lorem ipsum<br>
-                                Lorem ipsum<br>
-                                Lorem ipsum
-                            </p>
-                        </div>
-                    </div>
+    <div class="container container-narrow">
+        <?php foreach($past_events as $event): ?>
+        <?php $event_id = $event->ID; ?>
+        <div class="event">
+            <div class="md:flex gap-4 md:gap-8">
+                <div class="basis-5/12 md:basis-1/2">
+                    <p>
+                        <?php print get_the_post_thumbnail($event_id, 'full');?>
+                    </p>
                 </div>
-                <?php endfor; ?>
+                <div class="basis-7/12 md:basis-1/2">
+                    <h3><?php print get_the_title($event_id);?></h3>
+                    <p class="date uppercase">
+                        <?php if (get_field('custom_date_and_time', $event_id)):?>
+                        <?php print get_field('custom_date_and_time', $event_id);?>
+                        <?php else:?>
+                        <?php print bungalowkitchen_get_event_readable_date($event_id);?>
+                        <?php endif;?>
+                    </p>
+                    <?php print apply_filters('the_content', $event->post_content);?>
+                </div>
             </div>
         </div>
+        <?php endforeach; ?>
     </div>
 </div>

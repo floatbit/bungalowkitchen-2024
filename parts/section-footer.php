@@ -106,7 +106,7 @@
           <img src="<?php echo assets_url('/dist/images/bird.png'); ?>" class="bird" />
         </p>
         <p class="text-center md:text-right">
-          <a href="#" class="button">Make a Reservation</a>
+          <a href="#" >Make a Reservation</a>
         </p>
       </div>
     </div>

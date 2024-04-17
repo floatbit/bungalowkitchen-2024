@@ -34,7 +34,10 @@ $classes .= ' ' . get_field('bottom_margin');
             <img src="<?php echo assets_url('/dist/images/tree-boat.png'); ?>" class="tree-boat" />
         </div>
         <div class="basis-7/12 text-right">
-            <img src="<?php echo assets_url('/dist/images/DSC_1966.jpg'); ?>" class="photo" />
+            <?php $image = get_field( 'image' ); ?>
+            <?php if ( $image ) : ?>
+            <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="photo" />
+            <?php endif; ?>
         </div>
     </div>
 </div>

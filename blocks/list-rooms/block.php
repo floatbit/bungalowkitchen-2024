@@ -30,20 +30,24 @@ $classes .= ' ' . get_field('bottom_margin');
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container container-narrow">
-        <?php for($i = 0; $i < 3; $i++): ?>
-        <div class="room">
-            <div class="md:flex gap-8">
-                <div class="basis-1/2">
-                    <p>
-                        <img src="http://placehold.it/1000x680" alt="">
-                    </p>
-                </div>
-                <div class="basis-1/2">
-                    <h3 class="uppercase">The Listening Room</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A incidunt fugit sed consequuntur earum iure nostrum. Quisquam vero officia esse. Suscipit asperiores deserunt commodi quaerat assumenda minus eum consectetur laborum. Obcaecati culpa sed neque magni officia, enim architecto doloremque nesciunt!</p>
+    <?php if ( have_rows( 'rooms' ) ) : ?>
+		<?php while ( have_rows( 'rooms' ) ) : the_row(); ?>
+			<?php $image = get_sub_field( 'image' ); ?>
+            <div class="room">
+                <div class="md:flex gap-8">
+                    <div class="basis-1/2">
+                        <p>
+                        <?php if ( $image ) : ?>
+                            <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+                        <?php endif; ?>
+                        </p>
+                    </div>
+                    <div class="basis-1/2">
+                        <?php the_sub_field( 'text' ); ?>
+                    </div>
                 </div>
             </div>
-        </div>
-        <?php endfor; ?>
+		<?php endwhile; ?>
+	<?php endif; ?>
     </div>
 </div>

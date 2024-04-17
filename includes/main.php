@@ -39,3 +39,81 @@ add_action('wp_enqueue_scripts', function () {
     // If needed, separate the script per block
     //wp_register_script('blocks/text', assets_url('/dist/blocks/text.js'), ['jquery'], null, true);
 });
+
+
+/**
+ * Custom body classes.
+ */
+function bungalowkitchen_body_class($classes) {
+  global $post;
+  $blocks = parse_blocks( $post->post_content );
+  foreach ($blocks as $id=>$block) {
+    if ($id == 0 && ($block['blockName'] == 'acf/wide-image' || $block['blockName'] == 'acf/text-image')) {
+      $classes[] = 'page-header-no-bottom-margin';
+    }
+  }
+  return $classes;
+}
+add_filter('body_class', 'bungalowkitchen_body_class');
+
+function bungalowkitchen_get_events($options = array()) {
+    $args = array(
+      'post_type'      => 'tribe_events',
+      'post_status'    => 'publish',
+      'posts_per_page' => -1,
+      'orderby' => 'meta_value',
+      'meta_key' => '_EventEndDate',
+      'order' => 'ASC',
+    );
+    if (isset($options['order'])) {
+        $args['order'] = $options['order'];
+    }
+    $tax_query = array();
+    if (isset($options['tribe_events_cat'])) {
+      $tax_query[] =  array(
+        'taxonomy' => 'tribe_events_cat',
+        'field' => 'term_id',
+        'terms' => $options['tribe_events_cat']
+      );
+      $args['tax_query'] = $tax_query;
+    }
+    $meta_query = array();
+    if ($options['start-date']) {
+      $start_date = date('Y-m-d 23:59:59', strtotime($options['start-date'] . '-4 hours'));
+      $meta_query[] = array(
+        'key' => '_EventEndDate',
+        'compare' => '>=',
+        'value' => $start_date,
+        'type' => 'DATETIME'
+      );
+    }
+    if ($options['past']) {
+      $start_date = date('Y-m-d 23:59:59', strtotime($options['start-date'] . '-4 hours'));
+      $meta_query[] = array(
+        'key' => '_EventEndDate',
+        'compare' => '<',
+        'value' => $start_date,
+        'type' => 'DATETIME'
+      );
+    }
+    if ($meta_query) {
+      $args['meta_query'] = $meta_query;
+    }
+    //pr($options);
+    //pr($args);
+    $posts = get_posts($args);
+    return $posts;
+  }
+
+  function bungalowkitchen_get_event_readable_date($event) {
+    $start = tribe_get_start_date( $event, false, 'Y-m-d' );
+    $end = tribe_get_end_date( $event, false, 'Y-m-d' );
+    if ($start == $end) {
+      return tribe_get_start_date( $event, false, 'M. j, Y' );
+    } else if (time() < strtotime($start)) {
+      return sprintf('%s – %s', tribe_get_start_date( $event, false, 'M. j, Y' ), tribe_get_end_date( $event, false, 'M. j, Y' ));
+    } else {
+      return sprintf('%s – %s', tribe_get_start_date( $event, false, 'M. j, Y' ), tribe_get_end_date( $event, false, 'M. j, Y' ));
+    }
+  }
+  

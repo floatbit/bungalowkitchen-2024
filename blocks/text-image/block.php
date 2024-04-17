@@ -33,24 +33,14 @@ $classes .= ' ' . get_field('bottom_margin');
         <div class="md:flex">
             <div class="basis-5/12">
                 <div class="text">
-                    <h2>Need to Reach Us?</h2>
-                    <h4>Call 415-366-4088</h4>
-                    <p>
-                        <strong>Reservations</strong><br>
-                        <a href="mailto:reservations.tib@bungalowkitchen.com">reservations.tib@bungalowkitchen.com</a>
-                    </p>
-                    <p>
-                        <strong>Events</strong><br>
-                        <a href="mailto:tiburon.events@bungalowkitchen.com">tiburon-events@bungalowkitchen.com</a>
-                    </p>
-                    <p>
-                        <strong>General Information</strong><br>
-                        <a href="mailto:tiburon.info@bungalowkitchen.com">tiburon-info@bungalowkitchen.com</a>
-                    </p>
+                <?php the_field( 'text' ); ?>
                 </div>
             </div>
             <div class="basis-7/12 text-center hidden md:block">
-                <img src="<?php echo assets_url('/dist/images/mic-gold.png'); ?>" class="mic" />
+                <?php $image = get_field( 'image' ); ?>
+                <?php if ( $image ) : ?>
+                    <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="mic"/>
+                <?php endif; ?>
             </div>
         </div>
     </div>

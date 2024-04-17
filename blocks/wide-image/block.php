@@ -29,5 +29,8 @@ $classes .= ' ' . get_field('bottom_margin');
 ?>
 
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-    <img src="<?php echo assets_url('/dist/images/220117_Bungalow13522 1.jpg'); ?>"/>
+    <?php $image = get_field( 'image' ); ?>
+	<?php if ( $image ) : ?>
+		<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+	<?php endif; ?>
 </div>

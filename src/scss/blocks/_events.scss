@@ -28,4 +28,9 @@
       background-color: theme('colors.green');
     }
   }
+  p.cta {
+    a.btn {
+      @apply ml-0;
+    }
+  }
 }

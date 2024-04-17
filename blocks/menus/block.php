@@ -32,13 +32,13 @@ $classes .= ' ' . get_field('bottom_margin');
     <div class="container container-narrow">
         <div class="nav-menus">
             <div class="flex gap-2 flex-wrap justify-center">
-                <a href="#" class="button" data-post-id="10">Brunch</a>
-                <a href="#" class="button" data-post-id="11">Dinner</a>
-                <a href="#" class="button">Drinks</a>
-                <a href="#" class="button">Dessert</a>
-                <a href="#" class="button">Sunset Strips</a>
-                <a href="#" class="button">Tasting Menu</a>
-                <a href="#" class="button">Sunday Supper</a>
+                <a href="#" class="btn" data-post-id="10">Brunch</a>
+                <a href="#" class="btn" data-post-id="11">Dinner</a>
+                <a href="#" class="btn">Drinks</a>
+                <a href="#" class="btn">Dessert</a>
+                <a href="#" class="btn">Sunset Strips</a>
+                <a href="#" class="btn">Tasting Menu</a>
+                <a href="#" class="btn">Sunday Supper</a>
             </div>
         </div>
     </div>
