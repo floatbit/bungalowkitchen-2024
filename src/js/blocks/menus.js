@@ -11,21 +11,27 @@ export default class Menus {
     this.menus.forEach(menu => {
       menu.addEventListener('click', (e) => {
         e.preventDefault()
+
+        // remove btn--is-active
+        this.menus.forEach(m => m.classList.remove('btn--is-active'));
+
+        // Add the "btn--is-active" class to the clicked menu
+        e.currentTarget.classList.add('btn--is-active');
+
         var postId = e.target.getAttribute('data-post-id');
         // Select all elements with the class "payload"
         var payloadElements = this.el.querySelectorAll('.payload');
 
         // Iterate over the NodeList and add the "hidden" class to each element
         payloadElements.forEach(function(element) {
-            element.classList.add('hidden');
+          element.classList.add('hidden');
 
-            if (element.getAttribute('data-post-id') === postId) {
-              element.classList.remove('hidden');
-            }
-            
+          if (element.getAttribute('data-post-id') == postId) {
+            element.classList.remove('hidden');
+          }
+          
         });
 
-        console.log(postId)
       })
     })
   }

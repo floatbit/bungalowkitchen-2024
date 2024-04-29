@@ -175,8 +175,25 @@ p.cta .btn,
     width: calc(100% - 8px);
     height: calc(100% - 8px);
   }
-  &:hover {
+  span {
+    position: relative;
+    z-index: 5;
+  }
+  &:hover:after {
     @apply text-white bg-salmon;
+  }
+  &:hover {
+    span {
+      @apply text-white;
+    }
+  }
+  &.btn--is-active {
+    &:after {
+      @apply text-white bg-salmon;
+    }
+    span {
+      @apply text-white;
+    }
   }
 }
 
