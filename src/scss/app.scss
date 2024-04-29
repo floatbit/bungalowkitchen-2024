@@ -180,19 +180,19 @@ p.cta .btn,
     z-index: 5;
   }
   &:hover:after {
-    @apply text-white bg-salmon;
+    @apply bg-salmon;
   }
   &:hover {
     span {
-      @apply text-white;
+      @apply text-black;
     }
   }
   &.btn--is-active {
     &:after {
-      @apply text-white bg-salmon;
+      @apply bg-salmon;
     }
     span {
-      @apply text-white;
+      @apply text-black;
     }
   }
 }
