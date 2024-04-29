@@ -4,10 +4,10 @@
       <div class="basis-4/12">
         <h3>Follow Us</h3>
         <p class="social">
-        <a href="#">
+        <a href="https://www.facebook.com/bungalowkitchentiburon/" target="_blank">
             <img src="<?php echo assets_url('/dist/images/icon-facebook.png'); ?>"/>
           </a>
-          <a href="#">
+          <a href="https://instagram.com/bungalowkitchentiburon" target="_blank">
             <img src="<?php echo assets_url('/dist/images/icon-instagram.png'); ?>"/>
           </a>
         </p>
@@ -16,14 +16,18 @@
           <a href="tel:415-366-4088">415-366-4088</a>
         </p>
         <h3>Visit Us</h3>
-        <p>5 Main Street Tiburon <br>California 94920</p>
+        <p>
+          <a href="https://maps.app.goo.gl/GKLXgK7q9dMm16sz5" target="_blank">
+            5 Main Street Tiburon <br>California 94920
+          </a>
+        </p>
       </div>
       <div class="basis-4/12">
         <div class="newsletter-signup">
           <h3>Keep Up With<br>The Good Times</h3>
           <form action="#" class="pre-newsletter">
             <div class="inputs">
-              <input type="text" placeholder="Type your email here"><input type="submit" value="YEAH!">
+              <input type="text" placeholder="Type your email here" id="email"><input type="submit" value="YEAH!">
             </div>
           </form>
           <div class="reveal">
@@ -106,7 +110,7 @@
           <img src="<?php echo assets_url('/dist/images/bird.png'); ?>" class="bird" />
         </p>
         <p class="text-center md:text-right">
-          <a href="#" >Make a Reservation</a>
+          <a href="#" class="btn" id="sr-res-footer-button">Make a Reservation</a>
         </p>
       </div>
     </div>

@@ -1,2 +1,45 @@
 .block-tripleseat-form {
+  #tripleseat_embed_form {
+    background-color: rgba(248, 247, 244, 1);
+    @apply px-2 py-8;
+    @screen md {
+      @apply p-10;
+    }
+  }
+  #tripleseat-form {
+    @apply max-w-[1024px] mx-auto;
+    table {
+      width: 100%;
+    }
+    label {
+      @extend %h4;
+      @apply text-black mb-[4px] font-bold;
+      font-size: 18px;
+    }
+    input {
+      width: 100%;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      @extend %h3;
+      @apply mb-1;
+    }
+    h2#lead_form_event_header {
+      @apply mt-4;
+    }
+    input[type="submit"] {
+      @extend .btn;
+      @apply bg-black text-white border-black;
+      @apply m-0;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      margin-bottom: 10px;
+      border-color: theme('colors.black') !important;
+      &:hover {
+        @apply bg-salmon;
+      }
+    }
+  }
 }

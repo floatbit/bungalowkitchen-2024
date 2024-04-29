@@ -30,17 +30,19 @@
     @apply text-5xl;
   }
 
-  h2 {
+  h2,
+  %h2 {
     @apply mb-3;
     @include pixelsToResponsiveUnit(font-size, 36px, 50px, 50px);
   }
 
-  h3 {
+  h3,
+  %h3 {
     @apply mb-3;
     @include pixelsToResponsiveUnit(font-size, 24px, 32px, 32px);
   }
 
-  h4 {
+  h4, %h4 {
     @apply mb-3 uppercase text-green;
     @include pixelsToResponsiveUnit(font-size, 22px, 26px, 26px);
   }
@@ -65,7 +67,9 @@ a:hover {
 }
 
 main {
-  min-height: 100dvh;
+  @screen md {
+    min-height: 100dvh;
+  }
 }
 
 .antialiased {
@@ -143,8 +147,20 @@ nav.main-menu {
   }
 }
 
+.page-id-25.page-header-no-bottom-margin {;
+  .block-text-image {
+    .text {
+      @apply py-[20px];
+      @screen md {
+        @apply py-[80px];
+      }
+    }
+  }
+}
+
 p.cta .btn,
-.btn {
+.btn,
+%btn {
   @apply font-normal uppercase leading-none inline-block text-center relative m-2;
   @include pixelsToResponsiveUnit(font-size, 18px, 26px, 26px);
   border: 2px solid theme('colors.salmon');
@@ -176,7 +192,10 @@ footer {
     @apply text-white;
   }
   p {
-    @apply mb-8;
+    @apply mb-4;
+    @screen md {
+      @apply mb-8;
+    }
   }
   .social {
     img {
@@ -192,7 +211,10 @@ footer {
   }
   img.bird {
     @apply inline-block;
-    width: 280px;
+    width: 180px;
+    @screen md {
+      width: 280px;
+    }
   }
 }
 
@@ -228,7 +250,7 @@ footer {
     }
   }
   .reveal {
-    @apply fixed top-0 right-0 w-full h-full bg-black bg-opacity-70 text-black flex content-center justify-center;
+    @apply fixed top-0 right-0 w-full h-full bg-black bg-opacity-70 text-black flex content-center justify-center z-10;
     display: none;
     .reveal-content {
       max-width: 420px;
@@ -249,6 +271,9 @@ footer {
         min-height: 0;
       }
     }
+  }
+  .reveal--is-showing {
+    @apply flex;
   }
 }
 
