@@ -224,6 +224,7 @@ footer {
   }
   a.btn {
     @apply bg-white text-black;
+      @include pixelsToResponsiveUnit(font-size, 16px, 22px, 22px);
   }
   a:hover {
     @apply text-black;
@@ -247,7 +248,7 @@ footer {
     .inputs {
       display: flex;
       justify-content: center;
-      height: 56px;
+      height: 52px;
     }
     input {
       border-radius: 0;
@@ -260,7 +261,7 @@ footer {
     }
     input[type="text"] {
       @apply text-black bg-white uppercase font-bold;
-      @include pixelsToResponsiveUnit(font-size, 18px, 26px, 26px);
+      @include pixelsToResponsiveUnit(font-size, 16px, 22px, 22px);
       border: 2px solid theme('colors.black');
       border-right: 0;
       width: 100%;
@@ -274,6 +275,7 @@ footer {
     input[type="submit"] {
       @extend .btn;
       @apply text-black border-salmon cursor-pointer m-0;
+      @include pixelsToResponsiveUnit(font-size, 16px, 22px, 22px);
       padding: 10px 20px 8px 20px;
       &:hover {
         @apply bg-salmon text-white;
