@@ -1,7 +1,7 @@
 <footer>
   <div class="container">
     <div class="md:flex gap-10">
-      <div class="basis-4/12">
+      <div class="basis-3/12">
         <h3>Follow Us</h3>
         <p class="social">
         <a href="https://www.facebook.com/bungalowkitchentiburon/" target="_blank">
@@ -22,12 +22,15 @@
           </a>
         </p>
       </div>
-      <div class="basis-4/12">
+      <div class="basis-5/12">
         <div class="newsletter-signup">
           <h3>Keep Up With<br>The Good Times</h3>
           <form action="#" class="pre-newsletter">
             <div class="inputs">
-              <input type="text" placeholder="Type your email here" id="email"><input type="submit" value="YEAH!">
+              <input type="text" placeholder="Type your email here" id="email">
+              <div class="submit-wrapper">
+                <input type="submit" value="YEAH!">
+              </div>
             </div>
           </form>
           <div class="reveal">

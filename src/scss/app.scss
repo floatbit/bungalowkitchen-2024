@@ -7,13 +7,12 @@
 
 @layer base {
   html {
-    font-size: 18px;
-    font-size: 26px;
+    font-size: 22px;
     width: 100vw;
     overflow-x: hidden;
   }
   body {
-    @apply font-sans antialiased font-light;
+    @apply font-sans antialiased font-light bg-white;
     overflow-x: hidden;
   }
 
@@ -161,7 +160,7 @@ nav.main-menu {
 p.cta .btn,
 .btn,
 %btn {
-  @apply font-normal uppercase leading-none inline-block text-center relative m-2;
+  @apply font-bold uppercase leading-none inline-block text-center relative m-2;
   @include pixelsToResponsiveUnit(font-size, 18px, 26px, 26px);
   border: 2px solid theme('colors.salmon');
   padding: 18px 20px 16px 20px;
@@ -184,7 +183,7 @@ p.cta .btn,
   }
   &:hover {
     span {
-      @apply text-black;
+      @apply text-white;
     }
   }
   &.btn--is-active {
@@ -192,7 +191,7 @@ p.cta .btn,
       @apply bg-salmon;
     }
     span {
-      @apply text-black;
+      @apply text-white;
     }
   }
 }
@@ -202,6 +201,7 @@ footer {
   @apply text-white bg-green;
   h3 {
     @apply mb-2;
+    @include pixelsToResponsiveUnit(font-size, 22px, 28px, 28px);
     text-transform: uppercase;
     line-height: 1;
   }
@@ -209,19 +209,24 @@ footer {
     @apply text-white;
   }
   p {
-    @apply mb-4;
+    @apply mb-4 font-bold;
+    @include pixelsToResponsiveUnit(font-size, 16px, 22px, 22px);
     @screen md {
       @apply mb-8;
     }
   }
   .social {
     img {
-      width: 44px;
+      @apply mr-1;
+      width: 32px;
       display: inline-block;
     }
   }
   a.btn {
     @apply bg-white text-black;
+  }
+  a:hover {
+    @apply text-black;
   }
   .bird-container {
     @apply mb-2;
@@ -237,14 +242,16 @@ footer {
 
 .newsletter-signup {
   @apply  mb-8;
+  max-width: 400px;
   .pre-newsletter {
     .inputs {
       display: flex;
       justify-content: center;
+      height: 56px;
     }
     input {
       border-radius: 0;
-      padding: 4px 12px;
+      padding: 4px 16px 2px 16px;
       outline: none;
       appearance: none;
       background-color: transparent;
@@ -252,18 +259,31 @@ footer {
       font-size: 24px;
     }
     input[type="text"] {
-      @apply text-black bg-white uppercase;
+      @apply text-black bg-white uppercase font-bold;
+      @include pixelsToResponsiveUnit(font-size, 18px, 26px, 26px);
       border: 2px solid theme('colors.black');
       border-right: 0;
       width: 100%;
+
+    }
+    .submit-wrapper {
+      @apply bg-white;
+      border: 2px solid theme('colors.salmon');
+      padding: 4px;
     }
     input[type="submit"] {
       @extend .btn;
-      @apply bg-black text-white border-black;
-      @apply m-0;
+      @apply text-black border-salmon cursor-pointer m-0;
+      padding: 10px 20px 8px 20px;
       &:hover {
-        @apply bg-salmon;
+        @apply bg-salmon text-white;
       }
+    }
+    select,
+    input::placeholder,
+    textarea::placeholder {
+      @apply text-black;
+      opacity: 1;
     }
   }
   .reveal {
