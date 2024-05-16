@@ -199,8 +199,11 @@ p.cta .btn,
 footer {
   @apply py-10;
   @apply text-white bg-green;
+  .container-footer {
+    max-width: 1460px;
+  }
   h3 {
-    @apply mb-2;
+    @apply mb-4;
     @include pixelsToResponsiveUnit(font-size, 22px, 28px, 28px);
     text-transform: uppercase;
     line-height: 1;
@@ -230,13 +233,13 @@ footer {
     @apply text-black;
   }
   .bird-container {
-    @apply mb-2;
+    @apply mb-10;
   }
   img.bird {
     @apply inline-block;
     width: 180px;
     @screen md {
-      width: 280px;
+      width: 229px;
     }
   }
 }
@@ -245,6 +248,7 @@ footer {
   @apply  mb-8;
   max-width: 350px;
   .pre-newsletter {
+    @apply mt-6 mb-10;
     .inputs {
       display: flex;
       justify-content: center;

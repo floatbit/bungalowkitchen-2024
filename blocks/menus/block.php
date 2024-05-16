@@ -36,7 +36,7 @@ $classes .= ' ' . get_field('bottom_margin');
                 <a href="#" class="btn" data-post-id="11">Dinner</a>
                 <a href="#" class="btn">Drinks</a>
                 <a href="#" class="btn">Dessert</a>
-                <a href="#" class="btn">Sunset Strips</a>
+                <a href="#" class="btn">Sunset Sips</a>
                 <a href="#" class="btn">Tasting Menu</a>
                 <a href="#" class="btn">Sunday Supper</a>
             </div>

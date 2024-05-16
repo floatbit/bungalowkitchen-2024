@@ -1,5 +1,5 @@
 <footer>
-  <div class="container">
+  <div class="container container-footer">
     <div class="md:flex gap-10">
       <div class="basis-3/12">
         <h3>Follow Us</h3>
@@ -109,8 +109,8 @@
         </p>
       </div>
       <div class="basis-4/12 self-end">
-        <p class="bird-container text-center md:text-left">
-          <img src="<?php echo assets_url('/dist/images/bird.png'); ?>" class="bird" />
+        <p class="bird-container text-center md:text-right">
+          <img src="<?php echo assets_url('/dist/images/bird-footer.png'); ?>" class="bird" />
         </p>
         <p class="text-center md:text-right">
           <a href="#" class="btn" id="sr-res-footer-button">Make a Reservation</a>
