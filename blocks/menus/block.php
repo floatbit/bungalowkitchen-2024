@@ -32,13 +32,12 @@ $classes .= ' ' . get_field('bottom_margin');
     <div class="container container-narrow">
         <div class="nav-menus">
             <div class="flex gap-2 flex-wrap justify-center">
-                <a href="#" class="btn" data-post-id="10">Brunch</a>
-                <a href="#" class="btn" data-post-id="11">Dinner</a>
-                <a href="#" class="btn">Drinks</a>
-                <a href="#" class="btn">Dessert</a>
-                <a href="#" class="btn">Sunset Sips</a>
-                <a href="#" class="btn">Tasting Menu</a>
-                <a href="#" class="btn">Sunday Supper</a>
+                <?php $menus = get_field( 'menus' ); ?>
+                <?php foreach ( $menus as $post ) :  ?>
+                <?php setup_postdata( $post ); ?>
+                    <a href="#" class="btn" data-post-id="<?php print $post->ID;?>"><?php print $post->post_title;?></a>
+                <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
             </div>
         </div>
     </div>
@@ -57,91 +56,25 @@ $classes .= ' ' . get_field('bottom_margin');
             </div>
         </div>
         
-        <div class="menu-set payload hidden" data-post-id="10">
+        <?php foreach ( $menus as $post ) :  ?>
+        <?php setup_postdata( $post ); ?>
+        <?php
+            $left_text = get_field('left_text', $post->ID);
+            $right_text = get_field('right_text', $post->ID);
+        ?>
+        <div class="menu-set payload hidden" data-post-id="<?php print $post->ID;?>">
             <div class="md:grid grid-cols-2 gap-8 justify-center">
                 <div>
-                        <?php for($i = 0; $i < 3; $i++): ?>
-                        <h4>10 The Caviar Co. & Hog Island Oysters</h4>
-                        <p>
-                            <strong>Lorem Ipsum</strong><br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
-                            <em>Lorem, ipsum dolor.</em>
-                        </p>
-                        <p>
-                            <strong>Lorem Ipsum</strong><br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
-                            <em>Lorem, ipsum dolor.</em>
-                        </p>
-                        <p>
-                            <strong>Lorem Ipsum</strong><br>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
-                            <em>Lorem, ipsum dolor.</em>
-                        </p>
-                        <?php endfor; ?>
+                    <?php print $left_text;?>
                 </div>
                 <div>
-                    <h4>Starters</h4>
-                    <p>
-                        <strong>Lorem Ipsum</strong><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
-                        <em>Lorem, ipsum dolor.</em>
-                    </p>
-                    <p>
-                        <strong>Lorem Ipsum</strong><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
-                        <em>Lorem, ipsum dolor.</em>
-                    </p>
-                    <p>
-                        <strong>Lorem Ipsum</strong><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
-                        <em>Lorem, ipsum dolor.</em>
-                    </p>
+                    <?php print $right_text;?>
                 </div>
             </div>
         </div>
+        <?php endforeach; ?>
+        <?php wp_reset_postdata(); ?>
 
-        <div class="menu-set payload hidden" data-post-id="11">
-            <div class="md:grid grid-cols-2 gap-8 justify-center">
-                <div>
-                    <?php for($i = 0; $i < 3; $i++): ?>
-                    <h4>11 The Caviar Co. & Hog Island Oysters</h4>
-                    <p>
-                        <strong>Lorem Ipsum</strong><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
-                        <em>Lorem, ipsum dolor.</em>
-                    </p>
-                    <p>
-                        <strong>Lorem Ipsum</strong><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
-                        <em>Lorem, ipsum dolor.</em>
-                    </p>
-                    <p>
-                        <strong>Lorem Ipsum</strong><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
-                        <em>Lorem, ipsum dolor.</em>
-                    </p>
-                    <?php endfor; ?>
-                </div>
-                <div>
-                    <h4>Starters</h4>
-                    <p>
-                        <strong>Lorem Ipsum</strong><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
-                        <em>Lorem, ipsum dolor.</em>
-                    </p>
-                    <p>
-                        <strong>Lorem Ipsum</strong><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
-                        <em>Lorem, ipsum dolor.</em>
-                    </p>
-                    <p>
-                        <strong>Lorem Ipsum</strong><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, facere?<br>
-                        <em>Lorem, ipsum dolor.</em>
-                    </p>
-                </div>
-            </div>
-        </div>
 
     </div>
 </div>
