@@ -3,6 +3,26 @@
     "title": "Block: Instagram",
     "fields": [
         {
+            "key": "field_664de1482370b",
+            "label": "Instagram Handle",
+            "name": "instagram_handle",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_66200ddc29709",
             "label": "Instagram Shortcode",
             "name": "instagram_shortcode",
@@ -41,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1713376748
+    "modified": 1716379985
 }

@@ -31,7 +31,7 @@ $classes .= ' ' . get_field('bottom_margin');
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container container-narrow">
         <h2 class="mb-0">
-            <a href="https://instagram.com/bungalowkitchen" target="_blank">@bungalowkitchen</a>
+            <a href="https://instagram.com/<?php the_field( 'instagram_handle' ); ?>" target="_blank">@<?php the_field( 'instagram_handle' ); ?></a>
         </h2>
         <?php print apply_filters( 'the_content', get_field('instagram_shortcode') ); ?>
     </div>
