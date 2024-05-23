@@ -24,10 +24,15 @@
     }
     h2 {
       @extend %h3;
-      @apply mb-1;
+      @apply mb-1 mt-8;
     }
     h2#lead_form_event_header {
-      @apply mt-4;
+      @apply mt-8;
+    }
+    .row_contact_header {
+      h2 {
+        @apply mt-0;
+      }
     }
     input[type="submit"] {
       @extend .btn;
@@ -39,6 +44,21 @@
       border-color: theme('colors.black') !important;
       &:hover {
         @apply bg-salmon;
+      }
+    }
+    input[type="checkbox"] {
+      appearance: checkbox;
+    }
+    .row_gdpr_consent {
+      margin-bottom: 40px;
+      input {
+        width: auto;
+        margin-right: 10px;
+      }
+      label {
+        display: inline-block;
+        width: calc(100% - 30px);
+        float: right;
       }
     }
   }
