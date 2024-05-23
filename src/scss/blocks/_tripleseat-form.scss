@@ -49,6 +49,9 @@
     input[type="checkbox"] {
       appearance: checkbox;
     }
+    input#lead_phone_number {
+      width: 100%;
+    }
     .row_gdpr_consent {
       margin-bottom: 40px;
       input {
