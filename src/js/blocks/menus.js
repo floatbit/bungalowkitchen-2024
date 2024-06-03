@@ -16,9 +16,9 @@ export default class Menus {
         this.menus.forEach(m => m.classList.remove('btn--is-active'));
 
         // Add the "btn--is-active" class to the clicked menu
-        e.currentTarget.classList.add('btn--is-active');
+        menu.classList.add('btn--is-active');
 
-        var postId = e.target.getAttribute('data-post-id');
+        var postId = menu.getAttribute('data-post-id');
         // Select all elements with the class "payload"
         var payloadElements = this.el.querySelectorAll('.payload');
 
