@@ -4,7 +4,7 @@
       <div class="basis-3/12">
         <h3>Follow Us</h3>
         <p class="social">
-        <a href="https://www.facebook.com/bungalowkitchentiburon/" target="_blank">
+          <a href="https://www.facebook.com/bungalowkitchentiburon/" target="_blank">
             <img src="<?php echo assets_url('/dist/images/icon-facebook.png'); ?>"/>
           </a>
           <a href="https://instagram.com/bungalowkitchentiburon" target="_blank">
@@ -100,13 +100,7 @@
           </div>
 
         </div>
-        <h3>Hours</h3>
-        <p>
-          <strong>BRUNCH</strong>: Sat & Sun 11am-3pm<br>
-          <strong>DINNER</strong>: Wed-Sat 5pm-9pm<br>
-          <strong>SUNSET SIPS</strong>: Wed-Sun 4pm-6pm<br>
-          <strong>LATE NIGHT</strong>: Fri & Sat 9pm-12am
-        </p>
+        <?php the_field( 'hours', 'option' ); ?>
       </div>
       <div class="basis-4/12 self-end">
         <p class="bird-container text-center md:text-right">
