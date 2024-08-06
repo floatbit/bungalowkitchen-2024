@@ -12,6 +12,12 @@ export default class Menus {
       menu.addEventListener('click', (e) => {
         e.preventDefault()
 
+        const url = menu.getAttribute('data-url');
+        if (url && url.trim() !== '') {
+          window.location.href = url;
+          return;
+        }
+
         // remove btn--is-active
         this.menus.forEach(m => m.classList.remove('btn--is-active'));
 
