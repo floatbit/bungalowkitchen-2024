@@ -99,6 +99,15 @@ function bungalowkitchen_get_events($options = array()) {
     if ($meta_query) {
       $args['meta_query'] = $meta_query;
     }
+
+    if ($options['exclude_events']) {
+      $exclude_ids = array();
+      foreach ($options['exclude_events'] as $event) {
+        $exclude_ids[] = $event->ID;
+      }
+      $args['post__not_in'] = $exclude_ids;
+    }
+
     //pr($options);
     //pr($args);
     $posts = get_posts($args);

@@ -29,10 +29,17 @@ $classes .= ' ' . get_field('bottom_margin');
 ?>
 
 <?php
+
+$featured_events = get_field('featured_events');
+
     $options = array();
     $options['start-date'] = date('m/d/Y');
     $options['order'] = 'asc';
+    $options['exclude_events'] = $featured_events;
     $upcoming_events = bungalowkitchen_get_events($options);
+    if ($featured_events) {
+        $upcoming_events = array_merge($featured_events, $upcoming_events);
+    }
 
     $options = array();
     $options['past'] = true;
