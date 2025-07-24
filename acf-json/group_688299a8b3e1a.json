@@ -25,7 +25,7 @@
             "taxonomy": "",
             "return_format": "object",
             "multiple": 1,
-            "allow_null": 0,
+            "allow_null": 1,
             "bidirectional": 0,
             "ui": 1,
             "bidirectional_target": []
@@ -49,5 +49,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1753389519
+    "modified": 1753389794
 }
