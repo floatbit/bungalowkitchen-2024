@@ -8,7 +8,7 @@
 		<?php endif; ?>
     <div class="announcement">
       <a href="<?php the_sub_field( 'url' ); ?>" target="_blank">
-      <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="w-100"/>
+      <img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" class="w-full"/>
       </a>
     </div>
 
