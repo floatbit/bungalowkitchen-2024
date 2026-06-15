@@ -68,7 +68,8 @@ module.exports = {
         green: '#7D9383',
         brown: '#4A3431',
         black: '#31261D',
-        salmon: '#F28365'
+        salmon: '#F28365',
+        gold: '#B78B20'
       }
     },
   },

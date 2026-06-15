@@ -1,0 +1,12 @@
+{
+  "name": "acf/landing",
+  "title": "Landing",
+  "description": "",
+  "category": "bungalowkitchen",
+  "keywords": ["landing"],
+  "_viewScript": ["blocks/landing"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

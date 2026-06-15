@@ -1,0 +1,54 @@
+.block-landing {
+  .box-left,
+  .box-right {
+    @apply bg-cover bg-center;
+    height: calc(50vh - 60px);
+    min-height: 280px;
+    @screen lg {
+      @apply bg-cover bg-center h-screen;
+      min-height: none;
+    }
+  }
+  .box-left {
+    background-image: url('../../dist/images/BUN-SplashPage-BelmontShore-1920x1080.jpg');
+  }
+  .box-right {
+    background-image: url('../../dist/images/BUN-SplashPage-Tiburon-1920x1080.jpg');
+  }
+  .logo {
+    @apply text-center mx-auto mt-4 mb-2;
+    @screen lg {
+      @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-0;
+    }
+    img {
+      @apply mx-auto;
+      width: 160px;
+      @screen md {
+        width: 180px;
+      }
+      @media (min-width: 1024px) {
+        width: 280px;
+      }
+      @media (min-width: 1200px) {
+        width: 320px;
+      }
+    }
+  }
+  .location h2 {
+    @screen md {
+      font-size: 30px;
+    } 
+    @media (min-width: 1024px) {
+      font-size: 35px;
+    }
+    @media (min-width: 1200px) {
+      font-size: 45px;
+    }
+    @screen xl {
+      font-size: 50px;
+    }
+  }
+  .location a:hover {
+    @apply opacity-70;
+  }
+}

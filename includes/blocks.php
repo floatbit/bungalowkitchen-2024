@@ -18,6 +18,7 @@ add_action('init', function () {
     register_block_type($dir . '/blocks/image-rows');
     register_block_type($dir . '/blocks/tree-boat-image');
     register_block_type($dir . '/blocks/text-image');
+    register_block_type($dir . '/blocks/landing');
 }, 5);
 
 /**
@@ -40,6 +41,7 @@ add_filter('allowed_block_types_all', function($allowed_blocks, $editor_context)
                 'acf/image-rows',
                 'acf/tree-boat-image',
                 'acf/text-image',
+                'acf/landing',
             ];
             break;
     }
