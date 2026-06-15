@@ -1,24 +1,33 @@
+<?php
+  $location_fields = bungalowkitchen_get_location_fields();
+?>
 <footer>
   <div class="container container-footer">
     <div class="md:flex gap-10">
       <div class="basis-3/12">
         <h3>Follow Us</h3>
         <p class="social">
-          <a href="https://www.facebook.com/bungalowkitchentiburon/" target="_blank">
+          <?php if (!empty($location_fields['facebook'])): ?>
+          <a href="<?php echo $location_fields['facebook']['url']; ?>" target="_blank">
             <img src="<?php echo assets_url('/dist/images/icon-facebook.png'); ?>"/>
           </a>
-          <a href="https://instagram.com/bungalowkitchentiburon" target="_blank">
+          <?php endif; ?>
+          <?php if (!empty($location_fields['instagram'])): ?>
+          <a href="<?php echo $location_fields['instagram']['url']; ?>" target="_blank">
             <img src="<?php echo assets_url('/dist/images/icon-instagram.png'); ?>"/>
           </a>
+          <?php endif; ?>
         </p>
         <h3>Call Us</h3>
         <p>
-          <a href="tel:415-366-4088">415-366-4088</a>
+          <?php if (!empty($location_fields['phone_number'])): ?>
+          <a href="tel:<?php echo preg_replace('/[^0-9+]/', '', $location_fields['phone_number']); ?>"><?php echo $location_fields['phone_number']; ?></a>
+          <?php endif; ?>
         </p>
         <h3>Visit Us</h3>
         <p>
-          <a href="https://maps.app.goo.gl/GKLXgK7q9dMm16sz5" target="_blank">
-            5 Main Street Tiburon <br>California 94920
+          <a href="<?php echo $location_fields['google_maps_url']; ?>" target="_blank">
+            <?php echo nl2br($location_fields['address']); ?>
           </a>
         </p>
       </div>
@@ -100,7 +109,19 @@
           </div>
 
         </div>
-        <?php the_field( 'hours', 'option' ); ?>
+        <?php
+          if (!empty($location_fields['hours'])) {
+            print '<p>';
+            foreach ($location_fields['hours'] as $row) {
+              print sprintf(
+                '<span class="day">%s</span>: <span class="time">%s</span><br>',
+                $row['day'],
+                $row['hours']
+              );
+            }
+            print '</p>';
+          }
+        ?>
       </div>
       <div class="basis-4/12 self-end">
         <p class="bird-container text-center md:text-right">

@@ -31,11 +31,13 @@ $classes .= ' ' . get_field('bottom_margin');
 <?php
 
 $featured_events = get_field('featured_events');
+$location = get_field('location');
 
     $options = array();
     $options['start-date'] = date('m/d/Y');
     $options['order'] = 'asc';
     $options['exclude_events'] = $featured_events;
+    $options['location'] = $location;
     $upcoming_events = bungalowkitchen_get_events($options);
     if ($featured_events) {
         $upcoming_events = array_merge($featured_events, $upcoming_events);
@@ -44,6 +46,7 @@ $featured_events = get_field('featured_events');
     $options = array();
     $options['past'] = true;
     $options['order'] = 'desc';
+    $options['location'] = $location;
     $past_events = bungalowkitchen_get_events($options);
 
 ?>

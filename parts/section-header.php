@@ -18,13 +18,10 @@
     <div class="container container-fluid">
       <ul>
       <?php
-        $menu_name = 'Main';
-        $menu = wp_get_nav_menu_object($menu_name);
-        $menu_items = wp_get_nav_menu_items($menu->term_id);
-        foreach ($menu_items as $menu_item) {
-          $title = $menu_item->title;
-          $url = $menu_item->url;
-          print sprintf('<li><a href="%s">%s</a></li>', $url, $title);
+        $location_fields = bungalowkitchen_get_location_fields();
+        foreach ($location_fields['nav_links'] as $row) {
+          $link = $row['link'];
+          print sprintf('<li><a href="%s" target="%s">%s</a></li>', $link['url'], $link['target'] ?: '_self', $link['title']);
         }
       ?>
       </ul>
@@ -60,14 +57,13 @@
   <div class="container container-fluid">
     <ul>
     <?php
-      $menu_name = 'Main';
-      $menu = wp_get_nav_menu_object($menu_name);
-      $menu_items = wp_get_nav_menu_items($menu->term_id);
-      foreach ($menu_items as $menu_item) {
-        $title = $menu_item->title;
-        $url = $menu_item->url;
-        $image = get_field('image', $menu_item);
-        print sprintf('<li><img src="%s"><a href="%s">%s</a></li>', $image['url'], $url, $title);
+      $location_fields = bungalowkitchen_get_location_fields();
+      foreach ($location_fields['nav_links'] as $row) {
+        $link = $row['link'];
+        $image = $row['image'];
+        $image_url = is_array($image) ? $image['url'] : $image;
+        $image_html = $image_url ? sprintf('<img src="%s">', $image_url) : '';
+        print sprintf('<li>%s<a href="%s" target="%s">%s</a></li>', $image_html, $link['url'], $link['target'] ?: '_self', $link['title']);
       }
     ?>
     </ul>
