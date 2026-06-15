@@ -43,7 +43,7 @@
       </div>
       <div class="basis-1/2 self-center text-center">
         <a href="/">
-          <img src="<?php echo assets_url('/dist/images/logo-primary.png'); ?>" class="logo" />
+          <img src="<?php echo assets_url('/dist/images/logo-primary.png') . '?v=20260601-nomina'; ?>" class="logo" />
         </a>
       </div>
       <div class="basis-1/4 self-start text-right">
