@@ -66,12 +66,12 @@ if (!empty($block['align'])) {
                             </a>
                             <?php endif; ?>
                         </div>
-                        <a href="<?php echo esc_url($reservation_url); ?>" class="hidden lg:block lg:order-3 py-4 px-6 text-center text-white w-full font-bold uppercase bg-gold hover:bg-brown">
+                        <a href="<?php echo esc_url($reservation_url); ?>" class="hidden lg:hidden lg:order-3 py-4 px-6 text-center text-white w-full font-bold uppercase bg-gold hover:bg-brown">
                             <img src="<?php echo assets_url('/dist/images/arrow-right@2x.png'); ?>" alt="Reservation" class="inline-block mr-2 mix-blend-multiply">
                             Reservations
                         </a>
                         <div class="block lg:hidden w-full order-1 lg:order-4">
-                            <h3 class="mt-4">
+                            <h3 class="mt-4 hidden">
                                 <a href="<?php echo esc_url($reservation_url); ?>" class="block w-full uppercase text-center underline hover:opacity-70 hover:text-black">Reserve</a>
                             </h3>
                         </div>
