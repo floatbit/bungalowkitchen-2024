@@ -35,7 +35,13 @@ $classes .= ' ' . get_field('bottom_margin');
                 <?php $menus = get_field( 'menus' ); ?>
                 <?php foreach ( $menus as $post ) :  ?>
                 <?php setup_postdata( $post ); ?>
-                    <a href="#" class="btn" data-post-id="<?php print $post->ID;?>" data-url="<?php print get_field('url', $post->ID);?>"><?php print $post->post_title;?></a>
+                    <?php 
+                        $button_label = $post->post_title; 
+                        if (get_field('alternate_title', $post->ID)) {
+                            $button_label = get_field('alternate_title', $post->ID);
+                        }
+                    ?>
+                    <a href="#" class="btn" data-post-id="<?php print $post->ID;?>" data-url="<?php print get_field('url', $post->ID);?>"><?php print $button_label;?></a>
                 <?php endforeach; ?>
                 <?php wp_reset_postdata(); ?>
             </div>

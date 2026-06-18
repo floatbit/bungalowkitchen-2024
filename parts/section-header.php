@@ -30,21 +30,31 @@
 </nav>
 
 
+<?php 
+  global $post;
+  $home_url = get_permalink();
+  if (!empty($post) && !empty($post->ID)) {
+    $parent_id = wp_get_post_parent_id($post->ID);
+    if (!empty($parent_id)) {
+      $home_url = get_permalink($parent_id);
+    }
+  }
+?>
 <header>
   <div class="container container-fluid">
     <div class="flex justify-between">
       <div class="invisible md:visible basis-1/4 self-end">
-        <a href="/">
+        <a href="<?php echo $home_url; ?>">
           <img src="<?php echo assets_url('/dist/images/lifeguard-gold.png'); ?>" class="lifeguard" />
         </a>
       </div>
       <div class="basis-1/2 self-center text-center">
-        <a href="/">
+        <a href="<?php echo $home_url; ?>">
           <img src="<?php echo assets_url('/dist/images/logo-primary.png') . '?v=20260601-nomina'; ?>" class="logo" />
         </a>
       </div>
       <div class="basis-1/4 self-start text-right">
-        <a href="/">
+        <a href="<?php echo $home_url; ?>">
           <img src="<?php echo assets_url('/dist/images/bird.png'); ?>" class="bird" />
         </a>
       </div>

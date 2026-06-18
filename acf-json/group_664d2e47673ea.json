@@ -3,6 +3,27 @@
     "title": "Content: Food Menu",
     "fields": [
         {
+            "key": "field_6a342c33fe694",
+            "label": "Alternate Title",
+            "name": "alternate_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Show this text instead of the Title",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_664d2e471f341",
             "label": "Left Text",
             "name": "left_text",
@@ -78,5 +99,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1722897360
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1781804105
 }
