@@ -60,6 +60,11 @@ add_filter('body_class', 'bungalowkitchen_body_class');
  * Return all ACF fields for a location taxonomy term.
  */
 function bungalowkitchen_get_location_fields($term_id = null) {
+
+  if (is_front_page()) {
+    $term_id = 15;
+  }
+
   if ($term_id instanceof WP_Term && $term_id->taxonomy === 'location') {
     $term_id = (int) $term_id->term_id;
   }
@@ -86,7 +91,7 @@ function bungalowkitchen_get_location_fields($term_id = null) {
   }
 
   if (!$term_id) {
-    $term_id = 15;
+    return array();
   }
 
   $fields = get_fields('location_' . $term_id);
