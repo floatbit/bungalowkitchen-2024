@@ -86,7 +86,7 @@ function bungalowkitchen_get_location_fields($term_id = null) {
   }
 
   if (!$term_id) {
-    return array();
+    $term_id = 15;
   }
 
   $fields = get_fields('location_' . $term_id);
