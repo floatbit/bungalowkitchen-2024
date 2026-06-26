@@ -11,9 +11,9 @@
 
 <body <?php body_class('antialiased'); ?>>
 
-    <?php if (!is_front_page()): ?>
+    <?php //if (!is_front_page()): ?>
         <?php get_template_part('parts/announcement'); ?>
         <?php get_template_part('parts/section-header'); ?>
-    <?php endif; ?>
+    <?php //endif; ?>
 
     <main>
