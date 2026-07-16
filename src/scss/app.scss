@@ -357,3 +357,11 @@ footer {
     }
   }
 }
+
+.page-landing {
+  header,
+  footer,
+  nav.main-menu {
+    display: none;
+  }
+}
