@@ -2,7 +2,7 @@
   .box-left,
   .box-right {
     @apply bg-cover bg-center;
-    height: calc(50vh - 60px);
+    height: 50vh;
     min-height: 280px;
     @screen lg {
       @apply bg-cover bg-center h-screen;
@@ -15,12 +15,9 @@
   .box-right {
     background-image: url('../dist/images/BUN-SplashPage-Tiburon-1920x1080.jpg');
   }
-  .logo {
-    @apply text-center mx-auto mt-4 mb-2;
-    @screen lg {
-      @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-0;
-    }
+  .box {
     img {
+      @apply transition-transform duration-300 ease-in-out;
       @apply mx-auto;
       width: 160px;
       @screen md {
@@ -48,7 +45,59 @@
       font-size: 50px;
     }
   }
-  .location a:hover {
-    @apply opacity-70;
+  .box img:hover {
+    transform: scale(1.05);
   }
+
+  .landing-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .landing-popup.is-open {
+    display: flex;
+  }
+
+  .landing-popup__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    border: 0;
+    padding: 0;
+  }
+
+  .landing-popup__content {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 550px;
+  }
+
+  .landing-popup__image {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .landing-popup__close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    color: #fff;
+    background: transparent;
+    border: 0;
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
+  }
+}
+
+body.landing-popup-open {
+  overflow: hidden;
 }

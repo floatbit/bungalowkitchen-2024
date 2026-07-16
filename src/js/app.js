@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import Menus from '@/blocks/menus'
+import Landing from '@/blocks/landing'
 
 (function ($) {
 
@@ -11,6 +12,9 @@ import Menus from '@/blocks/menus'
   // blocks
   document.querySelectorAll('.block-menus').forEach(el => {
     new Menus(el)
+  })
+  document.querySelectorAll('.block-landing').forEach(el => {
+    new Landing(el)
   })
 
   // newsletter
