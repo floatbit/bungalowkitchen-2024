@@ -32,6 +32,19 @@
 
 <?php 
   global $post;
+  $location_fields = bungalowkitchen_get_location_fields();
+  $location_logo = !empty($location_fields['logo']) ? $location_fields['logo'] : null;
+  $logo_url = assets_url('/dist/images/logo-primary.png') . '?v=20260601-nomina';
+  if (is_array($location_logo) && !empty($location_logo['url'])) {
+    $logo_url = $location_logo['url'];
+  } elseif (is_numeric($location_logo)) {
+    $attachment_logo_url = wp_get_attachment_image_url((int) $location_logo, 'full');
+    if (!empty($attachment_logo_url)) {
+      $logo_url = $attachment_logo_url;
+    }
+  } elseif (!empty($location_logo)) {
+    $logo_url = $location_logo;
+  }
   $home_url = get_permalink();
   if (!empty($post) && !empty($post->ID)) {
     $parent_id = wp_get_post_parent_id($post->ID);
@@ -50,7 +63,7 @@
       </div>
       <div class="basis-1/2 self-center text-center">
         <a href="<?php echo $home_url; ?>">
-          <img src="<?php echo assets_url('/dist/images/logo-primary.png') . '?v=20260601-nomina'; ?>" class="logo" />
+          <img src="<?php echo esc_url($logo_url); ?>" class="logo" />
         </a>
       </div>
       <div class="basis-1/4 self-start text-right">
