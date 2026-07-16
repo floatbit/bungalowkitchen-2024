@@ -19,13 +19,7 @@
     img {
       @apply transition-transform duration-300 ease-in-out;
       @apply mx-auto;
-      width: 160px;
-      @screen md {
-        width: 180px;
-      }
-      @media (min-width: 1024px) {
-        width: 280px;
-      }
+      width: 280px;
       @media (min-width: 1200px) {
         width: 320px;
       }
