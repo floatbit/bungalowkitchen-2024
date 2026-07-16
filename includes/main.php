@@ -51,6 +51,9 @@ function bungalowkitchen_body_class($classes) {
     if ($id == 0 && ($block['blockName'] == 'acf/wide-image' || $block['blockName'] == 'acf/text-image')) {
       $classes[] = 'page-header-no-bottom-margin';
     }
+    if ($block['blockName'] == 'acf/landing') {
+      $classes[] = 'page-landing';
+    }
   }
   return $classes;
 }
