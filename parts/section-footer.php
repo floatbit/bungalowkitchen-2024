@@ -1,5 +1,24 @@
 <?php
   $location_fields = bungalowkitchen_get_location_fields();
+  $location_defaults = [
+    'facebook' => ['url' => 'https://www.facebook.com/bungalowkitchentiburon/'],
+    'instagram' => ['url' => 'https://instagram.com/bungalowkitchentiburon'],
+    'phone_number' => '415-366-4088',
+    'google_maps_url' => 'https://maps.app.goo.gl/GKLXgK7q9dMm16sz5',
+    'address' => "5 Main Street Tiburon\nCalifornia 94920",
+    'hours' => [
+      ['day' => 'MONDAY', 'hours' => 'Closed'],
+      ['day' => 'TUESDAY - THURSDAY', 'hours' => '5pm-9pm'],
+      ['day' => 'FRIDAY', 'hours' => '5pm-10pm'],
+      ['day' => 'SATURDAY', 'hours' => 'Brunch 11am-3pm | Dinner 5pm-10pm'],
+      ['day' => 'SUNDAY', 'hours' => 'Brunch 11am-3pm | Dinner 5pm-8pm'],
+    ],
+  ];
+  foreach ($location_defaults as $key => $value) {
+    if (empty($location_fields[$key])) {
+      $location_fields[$key] = $value;
+    }
+  }
 ?>
 <footer>
   <div class="container container-footer">

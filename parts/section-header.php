@@ -50,7 +50,7 @@
       </div>
       <div class="basis-1/2 self-center text-center">
         <a href="<?php echo $home_url; ?>">
-          <img src="<?php echo assets_url('/dist/images/logo-primary.png') . '?v=20260601-nomina'; ?>" class="logo" />
+          <img src="<?php echo esc_url('https://bungalowkitchen.com/wp-content/uploads/2026/07/the-bungalow-kitchen-tiburon-logo-primary-2026-07-10.png'); ?>" class="logo" />
         </a>
       </div>
       <div class="basis-1/4 self-start text-right">
