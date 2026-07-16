@@ -28,24 +28,28 @@ if (!empty($block['align'])) {
 
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($classes); ?>">
     <?php $locations = get_field('locations'); ?>
-    <div class="logo">
-        <img src="<?php echo assets_url('/dist/images/logo-primary.png'); ?>" alt="Logo" />
-    </div>
     <div class="lg:flex lg:h-screen w-screen">
         <?php if (!empty($locations)) : ?>
             <?php foreach ($locations as $index => $location) : ?>
                 <?php
-                $name = !empty($location['name']) ? $location['name'] : '';
-                $city_state = !empty($location['city_state']) ? $location['city_state'] : '';
                 $homepage_url = !empty($location['homepage_url']) ? $location['homepage_url'] : '';
                 $background_image = !empty($location['background_image']) ? $location['background_image'] : null;
                 $background_image_url = is_array($background_image) && !empty($background_image['url']) ? $background_image['url'] : '';
+                $logo = !empty($location['logo']) ? $location['logo'] : null;
+                $logo_url = is_array($logo) && !empty($logo['url']) ? $logo['url'] : assets_url('/dist/images/logo-primary.png');
                 $hiring_link = !empty($location['hiring_link']) ? $location['hiring_link'] : null;
+                $open_popup = !empty($location['open_popup']);
+                $popup = !empty($location['popup']) && is_array($location['popup']) ? $location['popup'] : array();
+                $popup_image = !empty($popup['image']) ? $popup['image'] : null;
+                $popup_image_url = is_array($popup_image) && !empty($popup_image['url']) ? $popup_image['url'] : '';
+                $popup_url = !empty($popup['url']) ? $popup['url'] : '';
+                $popup_id = $id . '-popup-' . $index;
+                $has_popup = $open_popup && !empty($popup_image_url);
                 $reservation_url = '#';
                 $panel_class = $index === 0 ? 'box-left' : 'box-right';
                 $style_attr = $background_image_url ? sprintf(' style="background-image: url(%s);"', esc_url($background_image_url)) : '';
                 ?>
-                <div class="basis-1/2 <?php echo esc_attr($panel_class); ?>"<?php echo $style_attr; ?>>
+                <div class="basis-1/2 box <?php echo esc_attr($panel_class); ?>"<?php echo $style_attr; ?>>
                     <div class="flex flex-col items-center justify-between h-full">
                         <div class="w-full order-3 lg:order-1">
                             <?php if (!empty($hiring_link['url'])) : ?>
@@ -55,14 +59,15 @@ if (!empty($block['align'])) {
                             <?php endif; ?>
                         </div>
                         <div class="location text-center order-2 h-full flex items-center justify-center">
-                            <?php if (!empty($homepage_url)) : ?>
+                            <?php if ($has_popup) : ?>
+                            <a href="#" data-popup-target="<?php echo esc_attr($popup_id); ?>" class="js-landing-popup-trigger h-full flex flex-col items-center justify-center">
+                            <?php elseif (!empty($homepage_url)) : ?>
                             <a href="<?php echo esc_url($homepage_url); ?>" class="h-full flex flex-col items-center justify-center">
                             <?php endif; ?>
-                            <div class="h-full flex flex-col items-center justify-center<?php echo !empty($homepage_url) ? ' hover:text-black' : ''; ?>">
-                                <h2 class="uppercase mb-0"><?php echo esc_html($name); ?></h2>
-                                <h3><?php echo esc_html($city_state); ?></h3>
+                            <div class="h-full flex flex-col items-center justify-center<?php echo (!empty($homepage_url) || $has_popup) ? ' hover:text-black' : ''; ?>">
+                                <img src="<?php echo esc_url($logo_url); ?>" alt="Logo" />
                             </div>
-                            <?php if (!empty($homepage_url)) : ?>
+                            <?php if ($has_popup || !empty($homepage_url)) : ?>
                             </a>
                             <?php endif; ?>
                         </div>
@@ -77,6 +82,21 @@ if (!empty($block['align'])) {
                         </div>
                     </div>
                 </div>
+                <?php if ($has_popup) : ?>
+                <div id="<?php echo esc_attr($popup_id); ?>" class="landing-popup js-landing-popup" aria-hidden="true">
+                    <button type="button" class="landing-popup__backdrop js-landing-popup-close" aria-label="Close popup"></button>
+                    <div class="landing-popup__content">
+                        <button type="button" class="landing-popup__close js-landing-popup-close" aria-label="Close popup">&times;</button>
+                        <?php if (!empty($popup_url)) : ?>
+                        <a href="<?php echo esc_url($popup_url); ?>" target="_blank" class="landing-popup__image-link">
+                        <?php endif; ?>
+                            <img src="<?php echo esc_url($popup_image_url); ?>" alt="" class="landing-popup__image" />
+                        <?php if (!empty($popup_url)) : ?>
+                        </a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <?php endif; ?>
             <?php endforeach; ?>
         <?php endif; ?>
     </div>

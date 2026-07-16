@@ -361,7 +361,8 @@ footer {
 .page-landing {
   header,
   footer,
-  nav.main-menu {
+  nav.main-menu,
+  nav.mobile-menu {
     display: none;
   }
 }
