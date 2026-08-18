@@ -53,6 +53,7 @@
       <div class="basis-5/12">
         <div class="newsletter-signup">
           <h3>Keep Up With<br>The Good Times</h3>
+          <?php if (empty($location_fields['newsletter_link'])): ?>
           <form action="#" class="pre-newsletter">
             <div class="inputs">
               <input type="text" placeholder="Type your email here" id="email">
@@ -126,6 +127,13 @@
                 <!--End mc_embed_signup-->
             </div>
           </div>
+          <?php else:
+            $newsletter_link = $location_fields['newsletter_link'];
+          ?>
+          <p class="pre-newsletter">
+            <a href="<?php echo esc_url($newsletter_link['url']); ?>" target="<?php echo esc_attr(!empty($newsletter_link['target']) ? $newsletter_link['target'] : '_self'); ?>" class="btn" style="margin: 0 !important;"><?php echo esc_html(!empty($newsletter_link['title']) ? $newsletter_link['title'] : 'YEAH!'); ?></a>
+          </p>
+          <?php endif; ?>
 
         </div>
         <?php

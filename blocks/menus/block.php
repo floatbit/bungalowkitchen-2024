@@ -55,7 +55,11 @@ $classes .= ' ' . get_field('bottom_margin');
                     <img src="<?php echo assets_url('/dist/images/seashell-salmon.png'); ?>" class="seashell"/>
                 </div>
                 <div class="basis-10/12">
+                    <?php if ($image = get_field('image')): ?>
+                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"/>
+                    <?php else: ?>
                     <img src="<?php echo assets_url('/dist/images/220117_Bungalow13522 1.jpg'); ?>"/>
+                    <?php endif; ?>
                 </div>
                 <div class="basis-1/12">
                 </div>
