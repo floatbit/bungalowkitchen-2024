@@ -203,7 +203,7 @@ $classes .= ' ' . get_field('bottom_margin');
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
     <div class="container container-narrow">
         <div id="tripleseat-form">
-            <script src="https://api.tripleseat.com/ts/dynamic_leads/ts_script.js?dynamic_lead_form_id=3801&public_key=e05666ea6059457d8c38050ef7684f3025d765df"></script>
+            <?php print get_field('embed_code'); ?>
         </div>
     </div>
 </div>
