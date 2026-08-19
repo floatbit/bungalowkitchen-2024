@@ -1,5 +1,10 @@
 <?php
   $location_fields = bungalowkitchen_get_location_fields();
+  $location_term = bungalowkitchen_get_location_term();
+  $reservation_button_id = 'sr-res-footer-button';
+  if ($location_term && !empty($location_term->slug)) {
+    $reservation_button_id .= '-' . $location_term->slug;
+  }
   $location_defaults = [
     'facebook' => ['url' => 'https://www.facebook.com/bungalowkitchentiburon/'],
     'instagram' => ['url' => 'https://instagram.com/bungalowkitchentiburon'],
@@ -155,7 +160,7 @@
           <img src="<?php echo assets_url('/dist/images/bird-footer.png'); ?>" class="bird" />
         </p>
         <p class="text-center md:text-right">
-          <a href="#" class="btn" id="sr-res-footer-button">Make a Reservation</a>
+          <a href="#" class="btn" id="<?php echo esc_attr($reservation_button_id); ?>">Make a Reservation</a>
         </p>
       </div>
     </div>

@@ -60,22 +60,21 @@ function bungalowkitchen_body_class($classes) {
 add_filter('body_class', 'bungalowkitchen_body_class');
 
 /**
- * Return all ACF fields for a location taxonomy term.
+ * Return the current location taxonomy term.
  */
-function bungalowkitchen_get_location_fields($term_id = null) {
-
+function bungalowkitchen_get_location_term($term_id = null) {
   if (is_front_page()) {
     $term_id = 15;
   }
 
   if ($term_id instanceof WP_Term && $term_id->taxonomy === 'location') {
-    $term_id = (int) $term_id->term_id;
+    return $term_id;
   }
 
   if (!$term_id) {
     $queried_object = get_queried_object();
     if ($queried_object instanceof WP_Term && $queried_object->taxonomy === 'location') {
-      $term_id = (int) $queried_object->term_id;
+      return $queried_object;
     }
   }
 
@@ -88,18 +87,33 @@ function bungalowkitchen_get_location_fields($term_id = null) {
     if ($post_id) {
       $terms = wp_get_post_terms((int) $post_id, 'location');
       if (!is_wp_error($terms) && !empty($terms)) {
-        $term_id = (int) $terms[0]->term_id;
+        return $terms[0];
       }
     }
   }
 
-  if (!$term_id) {
+  if ($term_id) {
+    $term = get_term((int) $term_id, 'location');
+    if ($term instanceof WP_Term && !is_wp_error($term)) {
+      return $term;
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Return all ACF fields for a location taxonomy term.
+ */
+function bungalowkitchen_get_location_fields($term_id = null) {
+  $term = bungalowkitchen_get_location_term($term_id);
+  if (!$term) {
     return array();
   }
 
-  $fields = get_fields('location_' . $term_id);
+  $fields = get_fields('location_' . $term->term_id);
   if ($fields === false) {
-    $fields = get_fields('term_' . $term_id);
+    $fields = get_fields('term_' . $term->term_id);
   }
 
   return is_array($fields) ? $fields : array();
