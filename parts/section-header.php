@@ -19,7 +19,7 @@
       <ul>
       <?php
         $location_fields = bungalowkitchen_get_location_fields();
-        foreach ($location_fields['nav_links'] as $row) {
+        foreach (($location_fields['nav_links'] ?? []) as $row) {
           $link = $row['link'];
           print sprintf('<li><a href="%s" target="%s">%s</a></li>', $link['url'], $link['target'] ?: '_self', $link['title']);
         }
@@ -45,7 +45,7 @@
   } elseif (!empty($location_logo)) {
     $logo_url = $location_logo;
   }
-  $home_url = get_permalink();
+  $home_url = is_404() ? home_url('/') : get_permalink();
   if (!empty($post) && !empty($post->ID)) {
     $parent_id = wp_get_post_parent_id($post->ID);
     if (!empty($parent_id)) {
@@ -81,7 +81,7 @@
     <ul>
     <?php
       $location_fields = bungalowkitchen_get_location_fields();
-      foreach ($location_fields['nav_links'] as $row) {
+      foreach (($location_fields['nav_links'] ?? []) as $row) {
         $link = $row['link'];
         $image = $row['image'];
         $image_url = is_array($image) ? $image['url'] : $image;

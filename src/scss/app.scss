@@ -366,3 +366,30 @@ footer {
     display: none;
   }
 }
+
+.error404 main {
+  min-height: 0;
+}
+
+.page-not-found {
+  padding: 60px 0 100px;
+
+  .page-not-found-code {
+    @apply text-gold font-bold;
+    font-size: clamp(64px, 10vw, 120px);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    @apply text-green uppercase;
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .btn:focus-visible {
+    outline: 2px solid theme('colors.black');
+    outline-offset: 4px;
+  }
+}

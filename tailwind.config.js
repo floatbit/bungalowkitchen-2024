@@ -50,6 +50,7 @@ module.exports = {
     './footer.php',
     './header.php',
     './index.php',
+    './404.php',
     './parts/**/*.php',
     './blocks/**/*.php',
     './src/scss/**/*.scss',
