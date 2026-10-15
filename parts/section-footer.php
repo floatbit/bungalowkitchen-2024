@@ -13,10 +13,12 @@
     'address' => "5 Main Street Tiburon\nCalifornia 94920",
     'hours' => [
       ['day' => 'MONDAY', 'hours' => 'Closed'],
-      ['day' => 'TUESDAY - THURSDAY', 'hours' => '5pm-9pm'],
-      ['day' => 'FRIDAY', 'hours' => '5pm-10pm'],
-      ['day' => 'SATURDAY', 'hours' => 'Brunch 11am-3pm | Dinner 5pm-10pm'],
-      ['day' => 'SUNDAY', 'hours' => 'Brunch 11am-3pm | Dinner 5pm-8pm'],
+      ['day' => 'TUESDAY', 'hours' => '5pm-9pm'],
+      ['day' => 'WEDNESDAY', 'hours' => '11am-9pm'],
+      ['day' => 'THURSDAY', 'hours' => '11am-9pm'],
+      ['day' => 'FRIDAY', 'hours' => '11am-9pm'],
+      ['day' => 'SATURDAY', 'hours' => '11am-9pm'],
+      ['day' => 'SUNDAY', 'hours' => '11am-8pm'],
     ],
   ];
   foreach ($location_defaults as $key => $value) {
@@ -61,84 +63,114 @@
           <?php if (empty($location_fields['newsletter_link'])): ?>
           <form action="#" class="pre-newsletter">
             <div class="inputs">
-              <input type="text" placeholder="Type your email here" id="email">
+              <input type="email" placeholder="Type your email here" id="email" required autocomplete="email">
               <div class="submit-wrapper">
                 <input type="submit" value="YEAH!">
               </div>
             </div>
           </form>
           <div class="reveal">
-
             <div class="reveal-content">
-              <button class="close-button" data-close aria-label="Close modal" type="button">
+              <button class="close-button" data-close aria-label="Close signup form" type="button">
                 <span aria-hidden="true">&times;</span>
               </button>
-
-                <!-- Begin Mailchimp Signup Form -->
-                <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-                <style type="text/css">
-                  #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-                  /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-                    We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-                </style>
-                <div id="mc_embed_signup">
-                <form action="https://wednesdayseven.us4.list-manage.com/subscribe/post?u=c78bdd4d07c452911c36d1e0a&amp;id=df329956e6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                    <div id="mc_embed_signup_scroll">
-                  <h2>Subscribe</h2>
-                <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                <div class="mc-field-group">
-                  <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-                </label>
-                  <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+              <style>
+                .bk-newsletter-form { background: #fff; padding: 18px 12px 8px; color: #31261d; }
+                .bk-newsletter-form h2 { margin: 0 0 8px; }
+                .bk-newsletter-form .bk-required { margin: 0 0 18px; font-size: 13px; }
+                .bk-newsletter-field { margin-bottom: 14px; }
+                .bk-newsletter-field label { display: block; margin-bottom: 5px; font-weight: 600; }
+                .bk-newsletter-field input { width: 100%; border: 1px solid #7d9383; background: #fffdf8; padding: 10px 12px; color: #31261d; }
+                .bk-newsletter-submit { border: 0; background: #31261d; color: #fff; padding: 11px 22px; cursor: pointer; text-transform: uppercase; }
+                .bk-newsletter-submit:hover { background: #f28365; }
+                .bk-newsletter-submit:disabled { opacity: .65; cursor: wait; }
+                .bk-newsletter-status { min-height: 22px; margin-top: 12px; }
+                .bk-newsletter-success { padding: 42px 24px; text-align: center; color: #fffdf8; text-shadow: 0 2px 10px rgba(49, 38, 29, 0.7); }
+                .bk-newsletter-hp { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
+              </style>
+              <form action="https://docs.google.com/forms/d/e/1FAIpQLSdGrpNUGLJ4Vt8oEC50Nc1hfKLOhqHVAVP-tUtSxjl4RaDDTg/formResponse" method="post" target="bk-newsletter-target" id="bk-newsletter-form" class="bk-newsletter-form">
+                <h2>Join the Good Times</h2>
+                <p class="bk-required"><span aria-hidden="true">*</span> Required fields</p>
+                <div class="bk-newsletter-field">
+                  <label for="mce-EMAIL">Email Address *</label>
+                  <input type="email" name="entry.363447893" id="mce-EMAIL" required autocomplete="email">
                 </div>
-                <div class="mc-field-group">
-                  <label for="mce-FNAME">First Name  <span class="asterisk">*</span>
-                </label>
-                  <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+                <div class="bk-newsletter-field">
+                  <label for="bk-first-name">First Name *</label>
+                  <input type="text" name="entry.1134613230" id="bk-first-name" required autocomplete="given-name">
                 </div>
-                <div class="mc-field-group">
-                  <label for="mce-LNAME">Last Name  <span class="asterisk">*</span>
-                </label>
-                  <input type="text" value="" name="LNAME" class="required" id="mce-LNAME">
+                <div class="bk-newsletter-field">
+                  <label for="bk-last-name">Last Name *</label>
+                  <input type="text" name="entry.1670716511" id="bk-last-name" required autocomplete="family-name">
                 </div>
-                <div class="mc-field-group">
-                  <label for="mce-MMERGE5">Zip Code  <span class="asterisk">*</span>
-                </label>
-                  <input type="text" value="" name="MMERGE5" class="required" id="mce-MMERGE5">
+                <div class="bk-newsletter-field">
+                  <label for="bk-zip">ZIP Code *</label>
+                  <input type="text" name="entry.1480154692" id="bk-zip" required inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}(-[0-9]{4})?">
                 </div>
-                <div class="mc-field-group size1of2">
-                  <label for="mce-MMERGE6-month">Birthday </label>
-                  <div class="datefield">
-                    <span class="subfield monthfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="MM" size="2" maxlength="2" name="MMERGE6[month]" id="mce-MMERGE6-month"></span> /
-                    <span class="subfield dayfield"><input class="birthday " type="text" pattern="[0-9]*" value="" placeholder="DD" size="2" maxlength="2" name="MMERGE6[day]" id="mce-MMERGE6-day"></span>
-                    <span class="small-meta nowrap">( mm / dd )</span>
-                  </div>
-                </div><div class="mc-field-group input-group checkboxes-location">
-                    <strong>Select a Location </strong>
-                    <ul><li><input type="checkbox" value="1" name="group[62714][1]" id="mce-group[62714]-62714-0"> <label for="mce-group[62714]-62714-0">Belmont Shore</label></li>
-                <li><input type="checkbox" value="2" name="group[62714][2]" id="mce-group[62714]-62714-1" checked> <label for="mce-group[62714]-62714-1">Tiburon</label></li>
-                </ul>
+                <div class="bk-newsletter-field">
+                  <label for="bk-birthday">Birthday <span>(optional, MM/DD)</span></label>
+                  <input type="text" name="entry.1461643582" id="bk-birthday" inputmode="numeric" placeholder="MM/DD" pattern="(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])">
                 </div>
-                  <div id="mce-responses" class="clear">
-                    <div class="response" id="mce-error-response" style="display:none"></div>
-                    <div class="response" id="mce-success-response" style="display:none"></div>
-                  </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c78bdd4d07c452911c36d1e0a_df329956e6" tabindex="-1" value=""></div>
-                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                    </div>
-                </form>
+                <div class="bk-newsletter-hp" aria-hidden="true">
+                  <label for="bk-website">Leave this field blank</label>
+                  <input type="text" id="bk-website" tabindex="-1" autocomplete="off">
                 </div>
-                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[5]='MMERGE5';ftypes[5]='zip';fnames[3]='MMERGE3';ftypes[3]='address';fnames[4]='MMERGE4';ftypes[4]='phone';fnames[6]='MMERGE6';ftypes[6]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-                <!--End mc_embed_signup-->
+                <input type="hidden" name="fvv" value="1">
+                <input type="hidden" name="pageHistory" value="0">
+                <input type="hidden" name="submit" value="Submit">
+                <input type="submit" value="Subscribe" class="bk-newsletter-submit">
+                <p class="bk-newsletter-status" role="status" aria-live="polite"></p>
+              </form>
+              <div class="bk-newsletter-success" id="bk-newsletter-success" hidden tabindex="-1">
+                <h2>You are in.</h2>
+                <p>Keep an eye on your inbox for the good times.</p>
+              </div>
+              <iframe name="bk-newsletter-target" id="bk-newsletter-target" title="Newsletter signup response" hidden></iframe>
+              <script>
+                (function () {
+                  var form = document.getElementById('bk-newsletter-form');
+                  var frame = document.getElementById('bk-newsletter-target');
+                  var success = document.getElementById('bk-newsletter-success');
+                  var status = form ? form.querySelector('.bk-newsletter-status') : null;
+                  var submit = form ? form.querySelector('.bk-newsletter-submit') : null;
+                  var submitted = false;
+                  if (!form || !frame || !success) return;
+                  form.addEventListener('submit', function (event) {
+                    if (document.getElementById('bk-website').value) {
+                      event.preventDefault();
+                      return;
+                    }
+                    submitted = true;
+                    submit.disabled = true;
+                    submit.value = 'Joining...';
+                    status.textContent = 'Submitting your signup...';
+                  });
+                  frame.addEventListener('load', function () {
+                    if (!submitted) return;
+                    submitted = false;
+                    form.hidden = true;
+                    success.hidden = false;
+                    success.focus();
+                  });
+                }());
+              </script>
             </div>
           </div>
-          <?php else:
+                    <?php else:
             $newsletter_link = $location_fields['newsletter_link'];
           ?>
-          <p class="pre-newsletter">
+          <p class="pre-newsletter" <?php print empty($location_fields['join_team_link']) ? '' : 'style="margin-bottom: 10px !important;"';?>>
             <a href="<?php echo esc_url($newsletter_link['url']); ?>" target="<?php echo esc_attr(!empty($newsletter_link['target']) ? $newsletter_link['target'] : '_self'); ?>" class="btn" style="margin: 0 !important;"><?php echo esc_html(!empty($newsletter_link['title']) ? $newsletter_link['title'] : 'YEAH!'); ?></a>
           </p>
           <?php endif; ?>
+
+<?php if (!empty($location_fields['join_team_link'])):
+$join_team_link = $location_fields['join_team_link'];
+?>
+<p class="pre-newsletter">
+            <a href="<?php echo esc_url($join_team_link['url']); ?>" target="<?php echo esc_attr(!empty($join_team_link['target']) ? $join_team_link['target'] : '_self'); ?>" class="btn" style="margin: 0 !important;"><?php echo esc_html(!empty($join_team_link['title']) ? $join_team_link['title'] : 'YEAH!'); ?></a>
+          </p>
+        <?php endif;?>
 
         </div>
         <?php
@@ -160,7 +192,11 @@
           <img src="<?php echo assets_url('/dist/images/bird-footer.png'); ?>" class="bird" />
         </p>
         <p class="text-center md:text-right">
+          <?php if ($location_term && 'tiburon' === $location_term->slug): ?>
+          <a href="https://www.opentable.com/r/the-bungalow-kitchen-tiburon" class="btn bk-opentable-trigger">Make a Reservation</a>
+          <?php else: ?>
           <a href="#" class="btn" id="<?php echo esc_attr($reservation_button_id); ?>">Make a Reservation</a>
+          <?php endif; ?>
         </p>
       </div>
     </div>
